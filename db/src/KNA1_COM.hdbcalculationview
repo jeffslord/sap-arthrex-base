@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="sap.hba.ecc::KNA1_COM" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" dataCategory="DEFAULT" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Projection" runWithInvokerPrivileges="false" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="Private view"/>
+  <metadata changedAt="2014-02-13 15:56:36.357"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="ADRC">
+      <resourceUri>sap.hba.ecc::ADRC</resourceUri>
+    </DataSource>
+    <DataSource id="TSAD3T">
+      <resourceUri>sap.hba.ecc::TSAD3T</resourceUri>
+    </DataSource>
+    <DataSource id="KNA1">
+      <resourceUri>sap.hba.ecc::KNA1</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+      <viewAttributes>
+        <viewAttribute id="CLIENT"/>
+        <viewAttribute id="ADDRNUMBER"/>
+        <viewAttribute id="NATION"/>
+        <viewAttribute id="COUNTRY"/>
+        <viewAttribute id="TRANSPZONE"/>
+        <viewAttribute id="NAME1"/>
+        <viewAttribute id="NAME2"/>
+        <viewAttribute id="CITY1"/>
+        <viewAttribute id="CITY2"/>
+        <viewAttribute id="POST_CODE1"/>
+        <viewAttribute id="REGION"/>
+        <viewAttribute id="LANGU"/>
+        <viewAttribute id="STREET"/>
+        <viewAttribute id="HOUSE_NUM1"/>
+        <viewAttribute id="HOUSE_NUM2"/>
+        <viewAttribute id="TITLE"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#ADRC">
+        <mapping xsi:type="Calculation:AttributeMapping" target="CLIENT" source="CLIENT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADDRNUMBER" source="ADDRNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NATION" source="NATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TRANSPZONE" source="TRANSPZONE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CITY1" source="CITY1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CITY2" source="CITY2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE1" source="POST_CODE1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LANGU" source="LANGU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STREET" source="STREET"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="HOUSE_NUM1" source="HOUSE_NUM1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="HOUSE_NUM2" source="HOUSE_NUM2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+      </input>
+      <filter>(&quot;NATION&quot; ='')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="textTable" languageColumn="LANGU">
+      <viewAttributes>
+        <viewAttribute id="CLIENT"/>
+        <viewAttribute id="TITLE"/>
+        <viewAttribute id="CITY1"/>
+        <viewAttribute id="TRANSPZONE"/>
+        <viewAttribute id="ADDRNUMBER"/>
+        <viewAttribute id="COUNTRY"/>
+        <viewAttribute id="NAME2"/>
+        <viewAttribute id="POST_CODE1"/>
+        <viewAttribute id="HOUSE_NUM2"/>
+        <viewAttribute id="NATION"/>
+        <viewAttribute id="HOUSE_NUM1"/>
+        <viewAttribute id="CITY2"/>
+        <viewAttribute id="LANGU"/>
+        <viewAttribute id="NAME1"/>
+        <viewAttribute id="STREET"/>
+        <viewAttribute id="REGION"/>
+        <viewAttribute id="TITLE_MEDI"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="CLIENT" source="CLIENT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CITY1" source="CITY1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TRANSPZONE" source="TRANSPZONE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADDRNUMBER" source="ADDRNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE1" source="POST_CODE1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="HOUSE_NUM2" source="HOUSE_NUM2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NATION" source="NATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="HOUSE_NUM1" source="HOUSE_NUM1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CITY2" source="CITY2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LANGU" source="LANGU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STREET" source="STREET"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+      </input>
+      <input node="#TSAD3T">
+        <mapping xsi:type="Calculation:AttributeMapping" target="TITLE_MEDI" source="TITLE_MEDI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CLIENT" source="CLIENT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+      </input>
+      <joinAttribute name="CLIENT"/>
+      <joinAttribute name="TITLE"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="KUNNR"/>
+        <viewAttribute id="ERDAT"/>
+        <viewAttribute id="BAHNS"/>
+        <viewAttribute id="BAHNE"/>
+        <viewAttribute id="BRSCH"/>
+        <viewAttribute id="BRAN1"/>
+        <viewAttribute id="BRAN2"/>
+        <viewAttribute id="BRAN3"/>
+        <viewAttribute id="BRAN4"/>
+        <viewAttribute id="BRAN5"/>
+        <viewAttribute id="DEAR1"/>
+        <viewAttribute id="DEAR2"/>
+        <viewAttribute id="DEAR3"/>
+        <viewAttribute id="DEAR5"/>
+        <viewAttribute id="DEAR6"/>
+        <viewAttribute id="KATR1"/>
+        <viewAttribute id="KATR2"/>
+        <viewAttribute id="KATR3"/>
+        <viewAttribute id="KATR4"/>
+        <viewAttribute id="KATR5"/>
+        <viewAttribute id="KATR6"/>
+        <viewAttribute id="KATR7"/>
+        <viewAttribute id="KATR8"/>
+        <viewAttribute id="KATR9"/>
+        <viewAttribute id="KATR10"/>
+        <viewAttribute id="KTOKD"/>
+        <viewAttribute id="KUKLA"/>
+        <viewAttribute id="LOEVM"/>
+        <viewAttribute id="NIELS"/>
+        <viewAttribute id="PERIV"/>
+        <viewAttribute id="SPERR"/>
+        <viewAttribute id="SPERZ"/>
+        <viewAttribute id="STCD1"/>
+        <viewAttribute id="STCD2"/>
+        <viewAttribute id="STCEG"/>
+        <viewAttribute id="ADRNR"/>
+        <viewAttribute id="AUFSD"/>
+        <viewAttribute id="FAKSD"/>
+        <viewAttribute id="LIFSD"/>
+        <viewAttribute id="CASSD"/>
+        <viewAttribute id="XCPDK"/>
+        <viewAttribute id="ERNAM"/>
+        <viewAttribute id="GFORM"/>
+        <viewAttribute id="BEGRU"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#KNA1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BAHNS" source="BAHNS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BAHNE" source="BAHNE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRAN1" source="BRAN1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRAN2" source="BRAN2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRAN3" source="BRAN3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRAN4" source="BRAN4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRAN5" source="BRAN5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DEAR1" source="DEAR1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DEAR2" source="DEAR2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DEAR3" source="DEAR3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DEAR5" source="DEAR5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DEAR6" source="DEAR6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR1" source="KATR1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR2" source="KATR2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR3" source="KATR3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR4" source="KATR4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR5" source="KATR5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR6" source="KATR6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR7" source="KATR7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR8" source="KATR8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR9" source="KATR9"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR10" source="KATR10"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTOKD" source="KTOKD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KUKLA" source="KUKLA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NIELS" source="NIELS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERIV" source="PERIV"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPERZ" source="SPERZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AUFSD" source="AUFSD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FAKSD" source="FAKSD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFSD" source="LIFSD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CASSD" source="CASSD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XCPDK" source="XCPDK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GFORM" source="GFORM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="C1_1" joinType="leftOuter">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="ADRNR"/>
+        <viewAttribute id="STCD2"/>
+        <viewAttribute id="BRAN1"/>
+        <viewAttribute id="SPERZ"/>
+        <viewAttribute id="NIELS"/>
+        <viewAttribute id="STCD1"/>
+        <viewAttribute id="DEAR1"/>
+        <viewAttribute id="KTOKD"/>
+        <viewAttribute id="KATR9"/>
+        <viewAttribute id="KUNNR"/>
+        <viewAttribute id="BRAN2"/>
+        <viewAttribute id="BRAN5"/>
+        <viewAttribute id="DEAR5"/>
+        <viewAttribute id="PERIV"/>
+        <viewAttribute id="DEAR6"/>
+        <viewAttribute id="KATR8"/>
+        <viewAttribute id="KATR4"/>
+        <viewAttribute id="DEAR2"/>
+        <viewAttribute id="KATR1"/>
+        <viewAttribute id="DEAR3"/>
+        <viewAttribute id="KATR6"/>
+        <viewAttribute id="SPERR"/>
+        <viewAttribute id="BRAN3"/>
+        <viewAttribute id="LOEVM"/>
+        <viewAttribute id="BAHNE"/>
+        <viewAttribute id="KATR7"/>
+        <viewAttribute id="ERDAT"/>
+        <viewAttribute id="KUKLA"/>
+        <viewAttribute id="KATR2"/>
+        <viewAttribute id="BRSCH"/>
+        <viewAttribute id="KATR5"/>
+        <viewAttribute id="KATR3"/>
+        <viewAttribute id="BRAN4"/>
+        <viewAttribute id="STCEG"/>
+        <viewAttribute id="KATR10"/>
+        <viewAttribute id="BAHNS"/>
+        <viewAttribute id="FAKSD"/>
+        <viewAttribute id="AUFSD"/>
+        <viewAttribute id="CASSD"/>
+        <viewAttribute id="LIFSD"/>
+        <viewAttribute id="TRANSPZONE"/>
+        <viewAttribute id="CITY1"/>
+        <viewAttribute id="REGION"/>
+        <viewAttribute id="NATION"/>
+        <viewAttribute id="NAME1"/>
+        <viewAttribute id="STREET"/>
+        <viewAttribute id="TITLE_MEDI"/>
+        <viewAttribute id="CITY2"/>
+        <viewAttribute id="POST_CODE1"/>
+        <viewAttribute id="HOUSE_NUM2"/>
+        <viewAttribute id="LANGU"/>
+        <viewAttribute id="COUNTRY"/>
+        <viewAttribute id="HOUSE_NUM1"/>
+        <viewAttribute id="NAME2"/>
+        <viewAttribute id="XCPDK"/>
+        <viewAttribute id="ERNAM"/>
+        <viewAttribute id="GFORM"/>
+        <viewAttribute id="BEGRU"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRAN1" source="BRAN1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPERZ" source="SPERZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NIELS" source="NIELS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DEAR1" source="DEAR1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTOKD" source="KTOKD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR9" source="KATR9"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRAN2" source="BRAN2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRAN5" source="BRAN5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DEAR5" source="DEAR5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERIV" source="PERIV"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DEAR6" source="DEAR6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR8" source="KATR8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR4" source="KATR4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DEAR2" source="DEAR2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR1" source="KATR1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DEAR3" source="DEAR3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR6" source="KATR6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRAN3" source="BRAN3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BAHNE" source="BAHNE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR7" source="KATR7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KUKLA" source="KUKLA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR2" source="KATR2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR5" source="KATR5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR3" source="KATR3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRAN4" source="BRAN4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KATR10" source="KATR10"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BAHNS" source="BAHNS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FAKSD" source="FAKSD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AUFSD" source="AUFSD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CASSD" source="CASSD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LIFSD" source="LIFSD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XCPDK" source="XCPDK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GFORM" source="GFORM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEGRU" source="BEGRU"/>
+      </input>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="TRANSPZONE" source="TRANSPZONE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CITY1" source="CITY1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGION" source="REGION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NATION" source="NATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STREET" source="STREET"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TITLE_MEDI" source="TITLE_MEDI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CITY2" source="CITY2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POST_CODE1" source="POST_CODE1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="HOUSE_NUM2" source="HOUSE_NUM2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LANGU" source="LANGU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY" source="COUNTRY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="HOUSE_NUM1" source="HOUSE_NUM1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME2" source="NAME2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="CLIENT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADDRNUMBER"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="ADRNR"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_3">
+    <attributes>
+      <attribute id="SAPClient" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="MANDT"/>
+      </attribute>
+      <attribute id="Customer" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="KUNNR"/>
+      </attribute>
+      <attribute id="CreationDate" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Creation Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="ERDAT"/>
+      </attribute>
+      <attribute id="CreatedByUser" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Created By User"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="ERNAM"/>
+      </attribute>
+      <attribute id="CustomerAccountGroup" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Customer Account Group"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="KTOKD"/>
+      </attribute>
+      <attribute id="IsOneTimeAccount" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Is One Time Account"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="XCPDK"/>
+      </attribute>
+      <attribute id="IsMarkedForDeletion" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Is Marked For Deletion"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="LOEVM"/>
+      </attribute>
+      <attribute id="IsCompetitor" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Is Competitor"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="DEAR1"/>
+      </attribute>
+      <attribute id="IsSalesPartner" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Is Sales Partner"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="DEAR2"/>
+      </attribute>
+      <attribute id="IsSalesProspect" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Is Sales Prospect"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="DEAR3"/>
+      </attribute>
+      <attribute id="IsDefaultSoldToParty" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Is Default Sold To Party"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="DEAR5"/>
+      </attribute>
+      <attribute id="IsConsumer" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Is Consumer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="DEAR6"/>
+      </attribute>
+      <attribute id="AddressID" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Address ID"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="ADRNR"/>
+      </attribute>
+      <attribute id="FormOfAddress" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Form Of Address"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="TITLE_MEDI"/>
+      </attribute>
+      <attribute id="CustomerName" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Customer Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="NAME1"/>
+      </attribute>
+      <attribute id="CustomerAdditionalName" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Customer Additional Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="NAME2"/>
+      </attribute>
+      <attribute id="StreetName" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Street Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="STREET"/>
+      </attribute>
+      <attribute id="HouseNumber" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="House Number"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="HOUSE_NUM1"/>
+      </attribute>
+      <attribute id="HouseNumberSupplementText" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="House Number Supplement Text"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="HOUSE_NUM2"/>
+      </attribute>
+      <attribute id="District" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="District"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="CITY2"/>
+      </attribute>
+      <attribute id="PostalCode" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Postal Code"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="POST_CODE1"/>
+      </attribute>
+      <attribute id="CityName" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="City Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="CITY1"/>
+      </attribute>
+      <attribute id="Country" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Country"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="COUNTRY"/>
+      </attribute>
+      <attribute id="Region" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Region"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="REGION"/>
+      </attribute>
+      <attribute id="TransportZone" order="25" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Transport Zone"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="TRANSPZONE"/>
+      </attribute>
+      <attribute id="Language" order="26" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Language"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="LANGU"/>
+      </attribute>
+      <attribute id="TrainStationName" order="27" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Train Station Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="BAHNS"/>
+      </attribute>
+      <attribute id="ExpressTrainStationName" order="28" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Express Train Station Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="BAHNE"/>
+      </attribute>
+      <attribute id="TaxID1" order="29" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax ID1"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="STCD1"/>
+      </attribute>
+      <attribute id="TaxID2" order="30" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax ID2"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="STCD2"/>
+      </attribute>
+      <attribute id="VATRegistration" order="31" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="VAT Registration"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="STCEG"/>
+      </attribute>
+      <attribute id="NielsenRegion" order="32" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Nielsen Region"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="NIELS"/>
+      </attribute>
+      <attribute id="CustomerClassification" order="33" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Customer Classification"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="KUKLA"/>
+      </attribute>
+      <attribute id="Industry" order="34" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Industry"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="BRSCH"/>
+      </attribute>
+      <attribute id="AdditionalIndustry1" order="35" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Additional Industry 1"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="BRAN1"/>
+      </attribute>
+      <attribute id="AdditionalIndustry2" order="36" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Additional Industry 2"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="BRAN2"/>
+      </attribute>
+      <attribute id="AdditionalIndustry3" order="37" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Additional Industry 3"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="BRAN3"/>
+      </attribute>
+      <attribute id="AdditionalIndustry4" order="38" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Additional Industry 4"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="BRAN4"/>
+      </attribute>
+      <attribute id="AdditionalIndustry5" order="39" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Additional Industry 5"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="BRAN5"/>
+      </attribute>
+      <attribute id="FiscalYearVariant" order="40" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Fiscal Year Variant"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="PERIV"/>
+      </attribute>
+      <attribute id="LegalEntityType" order="41" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Legal Entity Type"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="GFORM"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute01" order="42" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 01"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="KATR1"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute02" order="43" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 02"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="KATR2"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute03" order="44" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 03"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="KATR3"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute04" order="45" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 04"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="KATR4"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute05" order="46" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 05"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="KATR5"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute06" order="47" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 06"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="KATR6"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute07" order="48" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 07"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="KATR7"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute08" order="49" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 08"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="KATR8"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute09" order="50" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 09"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="KATR9"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute10" order="51" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 10"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="KATR10"/>
+      </attribute>
+      <attribute id="SalesIsBlockedForCustomer" order="52" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Sales Is Blocked For Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="CASSD"/>
+      </attribute>
+      <attribute id="OrderIsBlockedForCustomer" order="53" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Order Is Blocked For Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="AUFSD"/>
+      </attribute>
+      <attribute id="DeliveryIsBlockedForCustomer" order="54" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Delivery Is Blocked For Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="LIFSD"/>
+      </attribute>
+      <attribute id="BillingIsBlockedForCustomer" order="55" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Billing Is Blocked For Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="FAKSD"/>
+      </attribute>
+      <attribute id="PostingIsBlockedForCustomer" order="56" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Posting Is Blocked For Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="SPERR"/>
+      </attribute>
+      <attribute id="PaymentIsBlockedForCustomer" order="57" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Payment Is Blocked For Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="SPERZ"/>
+      </attribute>
+      <attribute id="AuthorizationGroup" order="58" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Authorization Group"/>
+        <keyMapping columnObjectName="Join_3" columnName="BEGRU"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="99" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="362"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="264"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="264"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="166"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

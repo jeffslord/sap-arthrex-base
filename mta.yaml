@@ -1,0 +1,22 @@
+_schema-version: 2.0
+ID: sap_hba_ecc
+description: null
+version: 0.0.1
+modules:
+  - name: sap_hba_ecc-db
+    type: hdb
+    path: db
+    requires:
+      - name: sap_hba_ecc-hdi
+        properties:
+          TARGET_CONTAINER: '~{service-name}'
+      - name: synonym-grantor-service
+resources:
+  - name: sap_hba_ecc-hdi
+    type: com.sap.xs.hdi-container
+    properties:
+      service-name: '${service-name}'
+  - name: synonym-grantor-service
+    type: org.cloudfoundry.existing-service
+    parameters:
+      service-name: arthrex-synonym-grantor-service

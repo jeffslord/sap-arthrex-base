@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="CustomerBasicData" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" visibility="internal" calculationScenarioType="TREE_BASED" dataCategory="DEFAULT" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Projection" runWithInvokerPrivileges="false">
+  <origin/>
+  <descriptions defaultDescription="Master data for customer basic data "/>
+  <metadata changedAt="2014-02-13 16:05:59.653"/>
+  <defaultSchema schemaName="SAP_ECC"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="KNA1_COM" type="CALCULATION_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/sap.hba.ecc/calculationviews/KNA1_COM</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="Customer"/>
+        <viewAttribute id="CreationDate"/>
+        <viewAttribute id="CreatedByUser"/>
+        <viewAttribute id="CustomerAccountGroup"/>
+        <viewAttribute id="IsOneTimeAccount"/>
+        <viewAttribute id="IsMarkedForDeletion"/>
+        <viewAttribute id="IsCompetitor"/>
+        <viewAttribute id="IsSalesPartner"/>
+        <viewAttribute id="IsSalesProspect"/>
+        <viewAttribute id="IsDefaultSoldToParty"/>
+        <viewAttribute id="IsConsumer"/>
+        <viewAttribute id="AddressID"/>
+        <viewAttribute id="FormOfAddress"/>
+        <viewAttribute id="CustomerName"/>
+        <viewAttribute id="CustomerAdditionalName"/>
+        <viewAttribute id="StreetName"/>
+        <viewAttribute id="HouseNumber"/>
+        <viewAttribute id="HouseNumberSupplementText"/>
+        <viewAttribute id="District"/>
+        <viewAttribute id="PostalCode"/>
+        <viewAttribute id="CityName"/>
+        <viewAttribute id="Country"/>
+        <viewAttribute id="Region"/>
+        <viewAttribute id="TransportZone"/>
+        <viewAttribute id="Language"/>
+        <viewAttribute id="TrainStationName"/>
+        <viewAttribute id="ExpressTrainStationName"/>
+        <viewAttribute id="TaxID1"/>
+        <viewAttribute id="TaxID2"/>
+        <viewAttribute id="VATRegistration"/>
+        <viewAttribute id="NielsenRegion"/>
+        <viewAttribute id="CustomerClassification"/>
+        <viewAttribute id="Industry"/>
+        <viewAttribute id="AdditionalIndustry1"/>
+        <viewAttribute id="AdditionalIndustry2"/>
+        <viewAttribute id="AdditionalIndustry3"/>
+        <viewAttribute id="AdditionalIndustry4"/>
+        <viewAttribute id="AdditionalIndustry5"/>
+        <viewAttribute id="FiscalYearVariant"/>
+        <viewAttribute id="LegalEntityType"/>
+        <viewAttribute id="FreeDefinedAttribute01"/>
+        <viewAttribute id="FreeDefinedAttribute02"/>
+        <viewAttribute id="FreeDefinedAttribute03"/>
+        <viewAttribute id="FreeDefinedAttribute04"/>
+        <viewAttribute id="FreeDefinedAttribute05"/>
+        <viewAttribute id="FreeDefinedAttribute06"/>
+        <viewAttribute id="FreeDefinedAttribute07"/>
+        <viewAttribute id="FreeDefinedAttribute08"/>
+        <viewAttribute id="FreeDefinedAttribute09"/>
+        <viewAttribute id="FreeDefinedAttribute10"/>
+        <viewAttribute id="SalesIsBlockedForCustomer"/>
+        <viewAttribute id="OrderIsBlockedForCustomer"/>
+        <viewAttribute id="DeliveryIsBlockedForCustomer"/>
+        <viewAttribute id="BillingIsBlockedForCustomer"/>
+        <viewAttribute id="PostingIsBlockedForCustomer"/>
+        <viewAttribute id="PaymentIsBlockedForCustomer"/>
+        <viewAttribute id="AuthorizationGroup"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#KNA1_COM">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Customer" source="Customer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CreationDate" source="CreationDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CreatedByUser" source="CreatedByUser"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerAccountGroup" source="CustomerAccountGroup"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IsOneTimeAccount" source="IsOneTimeAccount"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IsMarkedForDeletion" source="IsMarkedForDeletion"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IsCompetitor" source="IsCompetitor"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IsSalesPartner" source="IsSalesPartner"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IsSalesProspect" source="IsSalesProspect"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IsDefaultSoldToParty" source="IsDefaultSoldToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IsConsumer" source="IsConsumer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AddressID" source="AddressID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FormOfAddress" source="FormOfAddress"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerName" source="CustomerName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerAdditionalName" source="CustomerAdditionalName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="StreetName" source="StreetName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="HouseNumber" source="HouseNumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="HouseNumberSupplementText" source="HouseNumberSupplementText"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="District" source="District"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PostalCode" source="PostalCode"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CityName" source="CityName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Country" source="Country"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TransportZone" source="TransportZone"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Language" source="Language"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TrainStationName" source="TrainStationName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ExpressTrainStationName" source="ExpressTrainStationName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TaxID1" source="TaxID1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TaxID2" source="TaxID2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VATRegistration" source="VATRegistration"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NielsenRegion" source="NielsenRegion"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerClassification" source="CustomerClassification"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Industry" source="Industry"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AdditionalIndustry1" source="AdditionalIndustry1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AdditionalIndustry2" source="AdditionalIndustry2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AdditionalIndustry3" source="AdditionalIndustry3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AdditionalIndustry4" source="AdditionalIndustry4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AdditionalIndustry5" source="AdditionalIndustry5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FiscalYearVariant" source="FiscalYearVariant"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LegalEntityType" source="LegalEntityType"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FreeDefinedAttribute01" source="FreeDefinedAttribute01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FreeDefinedAttribute02" source="FreeDefinedAttribute02"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FreeDefinedAttribute03" source="FreeDefinedAttribute03"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FreeDefinedAttribute04" source="FreeDefinedAttribute04"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FreeDefinedAttribute05" source="FreeDefinedAttribute05"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FreeDefinedAttribute06" source="FreeDefinedAttribute06"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FreeDefinedAttribute07" source="FreeDefinedAttribute07"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FreeDefinedAttribute08" source="FreeDefinedAttribute08"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FreeDefinedAttribute09" source="FreeDefinedAttribute09"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FreeDefinedAttribute10" source="FreeDefinedAttribute10"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesIsBlockedForCustomer" source="SalesIsBlockedForCustomer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OrderIsBlockedForCustomer" source="OrderIsBlockedForCustomer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DeliveryIsBlockedForCustomer" source="DeliveryIsBlockedForCustomer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingIsBlockedForCustomer" source="BillingIsBlockedForCustomer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PostingIsBlockedForCustomer" source="PostingIsBlockedForCustomer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PaymentIsBlockedForCustomer" source="PaymentIsBlockedForCustomer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AuthorizationGroup" source="AuthorizationGroup"/>
+      </input>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Projection_1">
+    <attributes>
+      <attribute id="SAPClient" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="SAPClient"/>
+      </attribute>
+      <attribute id="Customer" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="Customer"/>
+      </attribute>
+      <attribute id="CreationDate" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Creation Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CreationDate"/>
+      </attribute>
+      <attribute id="CreatedByUser" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Created By User"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CreatedByUser"/>
+      </attribute>
+      <attribute id="CustomerAccountGroup" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Customer Account Group"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CustomerAccountGroup"/>
+      </attribute>
+      <attribute id="IsOneTimeAccount" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Is One Time Account"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="IsOneTimeAccount"/>
+      </attribute>
+      <attribute id="IsMarkedForDeletion" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Is Marked For Deletion"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="IsMarkedForDeletion"/>
+      </attribute>
+      <attribute id="IsCompetitor" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Is Competitor"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="IsCompetitor"/>
+      </attribute>
+      <attribute id="IsSalesPartner" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Is Sales Partner"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="IsSalesPartner"/>
+      </attribute>
+      <attribute id="IsSalesProspect" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Is Sales Prospect"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="IsSalesProspect"/>
+      </attribute>
+      <attribute id="IsDefaultSoldToParty" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Is Default Sold To Party"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="IsDefaultSoldToParty"/>
+      </attribute>
+      <attribute id="IsConsumer" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Is Consumer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="IsConsumer"/>
+      </attribute>
+      <attribute id="AddressID" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Address ID"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="AddressID"/>
+      </attribute>
+      <attribute id="FormOfAddress" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Form Of Address"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FormOfAddress"/>
+      </attribute>
+      <attribute id="CustomerName" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Customer Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CustomerName"/>
+      </attribute>
+      <attribute id="CustomerAdditionalName" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Customer Additional Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CustomerAdditionalName"/>
+      </attribute>
+      <attribute id="StreetName" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Street Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="StreetName"/>
+      </attribute>
+      <attribute id="HouseNumber" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="House Number"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="HouseNumber"/>
+      </attribute>
+      <attribute id="HouseNumberSupplementText" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="House Number Supplement Text"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="HouseNumberSupplementText"/>
+      </attribute>
+      <attribute id="District" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="District"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="District"/>
+      </attribute>
+      <attribute id="PostalCode" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Postal Code"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="PostalCode"/>
+      </attribute>
+      <attribute id="CityName" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="City Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CityName"/>
+      </attribute>
+      <attribute id="Country" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Country"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="Country"/>
+      </attribute>
+      <attribute id="Region" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Region"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="Region"/>
+      </attribute>
+      <attribute id="TransportZone" order="25" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Transport Zone"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="TransportZone"/>
+      </attribute>
+      <attribute id="Language" order="26" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Language"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="Language"/>
+      </attribute>
+      <attribute id="TrainStationName" order="27" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Train Station Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="TrainStationName"/>
+      </attribute>
+      <attribute id="ExpressTrainStationName" order="28" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Express Train Station Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="ExpressTrainStationName"/>
+      </attribute>
+      <attribute id="TaxID1" order="29" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax ID1"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="TaxID1"/>
+      </attribute>
+      <attribute id="TaxID2" order="30" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Tax ID2"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="TaxID2"/>
+      </attribute>
+      <attribute id="VATRegistration" order="31" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="VAT Registration"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VATRegistration"/>
+      </attribute>
+      <attribute id="NielsenRegion" order="32" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Nielsen Region"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="NielsenRegion"/>
+      </attribute>
+      <attribute id="CustomerClassification" order="33" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Customer Classification"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CustomerClassification"/>
+      </attribute>
+      <attribute id="Industry" order="34" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Industry"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="Industry"/>
+      </attribute>
+      <attribute id="AdditionalIndustry1" order="35" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Additional Industry 1"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="AdditionalIndustry1"/>
+      </attribute>
+      <attribute id="AdditionalIndustry2" order="36" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Additional Industry 2"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="AdditionalIndustry2"/>
+      </attribute>
+      <attribute id="AdditionalIndustry3" order="37" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Additional Industry 3"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="AdditionalIndustry3"/>
+      </attribute>
+      <attribute id="AdditionalIndustry4" order="38" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Additional Industry 4"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="AdditionalIndustry4"/>
+      </attribute>
+      <attribute id="AdditionalIndustry5" order="39" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Additional Industry 5"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="AdditionalIndustry5"/>
+      </attribute>
+      <attribute id="FiscalYearVariant" order="40" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Fiscal Year Variant"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FiscalYearVariant"/>
+      </attribute>
+      <attribute id="LegalEntityType" order="41" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Legal Entity Type"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="LegalEntityType"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute01" order="42" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 01"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FreeDefinedAttribute01"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute02" order="43" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 02"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FreeDefinedAttribute02"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute03" order="44" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 03"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FreeDefinedAttribute03"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute04" order="45" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 04"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FreeDefinedAttribute04"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute05" order="46" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 05"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FreeDefinedAttribute05"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute06" order="47" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 06"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FreeDefinedAttribute06"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute07" order="48" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 07"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FreeDefinedAttribute07"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute08" order="49" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 08"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FreeDefinedAttribute08"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute09" order="50" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 09"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FreeDefinedAttribute09"/>
+      </attribute>
+      <attribute id="FreeDefinedAttribute10" order="51" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Free Defined Attribute 10"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FreeDefinedAttribute10"/>
+      </attribute>
+      <attribute id="SalesIsBlockedForCustomer" order="52" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Sales Is Blocked For Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="SalesIsBlockedForCustomer"/>
+      </attribute>
+      <attribute id="OrderIsBlockedForCustomer" order="53" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Order Is Blocked For Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="OrderIsBlockedForCustomer"/>
+      </attribute>
+      <attribute id="DeliveryIsBlockedForCustomer" order="54" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Delivery Is Blocked For Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="DeliveryIsBlockedForCustomer"/>
+      </attribute>
+      <attribute id="BillingIsBlockedForCustomer" order="55" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Billing Is Blocked For Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="BillingIsBlockedForCustomer"/>
+      </attribute>
+      <attribute id="PostingIsBlockedForCustomer" order="56" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Posting Is Blocked For Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="PostingIsBlockedForCustomer"/>
+      </attribute>
+      <attribute id="PaymentIsBlockedForCustomer" order="57" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Payment Is Blocked For Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="PaymentIsBlockedForCustomer"/>
+      </attribute>
+      <attribute id="AuthorizationGroup" order="58" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Authorization Group"/>
+        <keyMapping columnObjectName="Projection_1" columnName="AuthorizationGroup"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="166"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

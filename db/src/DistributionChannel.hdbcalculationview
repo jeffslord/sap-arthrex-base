@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="sap.hba.ecc::DistributionChannel" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hidden="true" dataCategory="DEFAULT" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Projection" runWithInvokerPrivileges="false" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="Master data for distribution channel"/>
+  <metadata changedAt="2013-06-20 16:25:57.019" createdAt="2012-07-18 14:24:04.741"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="TVTW">
+      <resourceUri>sap.hba.ecc::TVTW</resourceUri>
+    </DataSource>
+    <DataSource id="TVTWT">
+      <resourceUri>sap.hba.ecc::TVTWT</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="textTable" languageColumn="SPRAS">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="VTWEG"/>
+        <viewAttribute id="SPRAS"/>
+        <viewAttribute id="VTEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#TVTW">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      </input>
+      <input node="#TVTWT">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VTEXT" source="VTEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="VTWEG"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_1">
+    <attributes>
+      <attribute id="SAPClient">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="MANDT"/>
+      </attribute>
+      <attribute id="DistributionChannel">
+        <descriptions defaultDescription="Distribution Channel"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="VTWEG"/>
+      </attribute>
+      <attribute id="DistributionChannelName">
+        <descriptions defaultDescription="Distribution Channel Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="VTEXT"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+      </shape>
+      <shape modelObjectName="TVTW" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="50" y="224"/>
+      </shape>
+      <shape modelObjectName="TVTWT" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="170" y="224"/>
+      </shape>
+      <shape modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="166"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

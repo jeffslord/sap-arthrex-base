@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="SAPClient" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" visibility="internal" calculationScenarioType="TREE_BASED" dataCategory="DEFAULT" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Projection" runWithInvokerPrivileges="false">
+  <origin/>
+  <descriptions defaultDescription="Master data for SAP client"/>
+  <defaultSchema schemaName="SAP_ECC"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="T000" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="SAP_ECC" columnObjectName="T000"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="MTEXT"/>
+        <viewAttribute id="ORT01"/>
+        <viewAttribute id="MWAER"/>
+        <viewAttribute id="CCCATEGORY"/>
+        <viewAttribute id="LOGSYS"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#T000">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MTEXT" source="MTEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MWAER" source="MWAER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CCCATEGORY" source="CCCATEGORY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOGSYS" source="LOGSYS"/>
+      </input>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Projection_1">
+    <attributes>
+      <attribute id="SAPClient" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MANDT"/>
+      </attribute>
+      <attribute id="SAPClientName" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP Client Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MTEXT"/>
+      </attribute>
+      <attribute id="CityName" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="City Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="ORT01"/>
+      </attribute>
+      <attribute id="GroupCurrency" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Group Currency"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MWAER"/>
+      </attribute>
+      <attribute id="SAPClientRole" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP Client Role"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CCCATEGORY"/>
+      </attribute>
+      <attribute id="LogicalSystem" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Logical System"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="LOGSYS"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+        <rectangleSize/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="166"/>
+        <rectangleSize/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

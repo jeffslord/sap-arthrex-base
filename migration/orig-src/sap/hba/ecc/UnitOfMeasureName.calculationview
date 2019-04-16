@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="UnitOfMeasureName" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" visibility="internal" calculationScenarioType="TREE_BASED" dataCategory="DEFAULT" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Projection" runWithInvokerPrivileges="false">
+  <origin/>
+  <descriptions defaultDescription="Names of units of measure in different languages "/>
+  <defaultSchema schemaName="SAP_ECC"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="T006A" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="SAP_ECC" columnObjectName="T006A"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="T006A">
+    <attributes>
+      <attribute id="SAPClient" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping schemaName="SAP_ECC" columnObjectName="T006A" columnName="MANDT"/>
+      </attribute>
+      <attribute id="Language" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Language"/>
+        <searchProperties/>
+        <keyMapping schemaName="SAP_ECC" columnObjectName="T006A" columnName="SPRAS"/>
+      </attribute>
+      <attribute id="UnitOfMeasure" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Unit Of Measure"/>
+        <searchProperties/>
+        <keyMapping schemaName="SAP_ECC" columnObjectName="T006A" columnName="MSEHI"/>
+      </attribute>
+      <attribute id="UnitOfMeasure_E" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Unit Of Measure Commercial Name"/>
+        <searchProperties/>
+        <keyMapping schemaName="SAP_ECC" columnObjectName="T006A" columnName="MSEH3"/>
+      </attribute>
+      <attribute id="UnitOfMeasureTechnicalName" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Unit Of Measure Technical Name"/>
+        <searchProperties/>
+        <keyMapping schemaName="SAP_ECC" columnObjectName="T006A" columnName="MSEH6"/>
+      </attribute>
+      <attribute id="UnitOfMeasureName" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Unit Of Measure Name"/>
+        <searchProperties/>
+        <keyMapping schemaName="SAP_ECC" columnObjectName="T006A" columnName="MSEHT"/>
+      </attribute>
+      <attribute id="UnitOfMeasureLongName" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Unit Of Measure Long Name"/>
+        <searchProperties/>
+        <keyMapping schemaName="SAP_ECC" columnObjectName="T006A" columnName="MSEHL"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+        <rectangleSize/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

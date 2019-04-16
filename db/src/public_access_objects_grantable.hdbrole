@@ -1,0 +1,168 @@
+{
+    "role": {
+        "name": "sap.hba.ecc::PublicAccessObjects#",
+        "object_privileges": [
+            {
+                "name": "sap.hba.ecc::AccountingPostingStatus",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::AccountingTransferStatus",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::BillingDocumentCategory",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::BillingDocumentHeader",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::BillingDocumentItem",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::BillingDocumentType",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::CustomerBasicData",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::CustomerGroup",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::DistributionChannel",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::KNA1_COM",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::ProductHierarchyNode",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::SAPClient",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::SDDocHeaderBusinessPartner",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::SDDocItemBusinessPartner",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::SDDocumentCategory",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::SalesDistrict",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::SalesOrganization",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::UnitOfMeasureName",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::VBPA_HDR",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::VBPA_ITM",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::VBRK_COM",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::VBRP_COM",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            },
+            {
+                "name": "sap.hba.ecc::VBUK_COM",
+                "type": "VIEW",
+                "privileges_with_grant_option": [
+                    "SELECT"
+                ]
+            }
+        ]
+    }
+}

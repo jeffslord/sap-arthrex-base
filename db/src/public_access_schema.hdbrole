@@ -1,0 +1,13 @@
+{
+    "role": {
+        "name": "sap.hba.ecc::PublicAccessSchema",
+        "schema_privileges": [
+            {
+                "privileges": [
+                    "SELECT",
+                    "EXECUTE"
+                ]
+            }
+        ]
+    }
+}

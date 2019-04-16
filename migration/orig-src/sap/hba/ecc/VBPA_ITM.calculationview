@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="VBPA_ITM" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hidden="true" visibility="internal" calculationScenarioType="TREE_BASED" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Projection" runWithInvokerPrivileges="false">
+  <origin/>
+  <descriptions defaultDescription="Private view"/>
+  <metadata changedAt="2013-06-27 14:35:51.03" createdAt="2012-08-15 15:58:01.005"/>
+  <defaultSchema schemaName="SAP_ECC"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="VBPA" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="SAP_ECC" columnObjectName="VBPA"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Proj_VBPA">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="VBELN"/>
+        <viewAttribute id="POSNR"/>
+        <viewAttribute id="PARVW"/>
+        <viewAttribute id="KUNNR"/>
+        <viewAttribute id="PERNR"/>
+        <viewAttribute id="ADRNR"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#VBPA">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VBELN" source="VBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PARVW" source="PARVW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERNR" source="PERNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+      </input>
+      <filter>(&quot;POSNR&quot; !='000000')</filter>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Proj_VBPA">
+    <attributes>
+      <attribute id="SAPClient">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Proj_VBPA" columnName="MANDT"/>
+      </attribute>
+      <attribute id="SalesDocument">
+        <descriptions defaultDescription="Sales Document"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Proj_VBPA" columnName="VBELN"/>
+      </attribute>
+      <attribute id="SalesDocumentItem">
+        <descriptions defaultDescription="Sales Document Item"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Proj_VBPA" columnName="POSNR"/>
+      </attribute>
+      <attribute id="PartnerFunction">
+        <descriptions defaultDescription="Partner Function"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Proj_VBPA" columnName="PARVW"/>
+      </attribute>
+      <attribute id="Customer">
+        <descriptions defaultDescription="Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Proj_VBPA" columnName="KUNNR"/>
+      </attribute>
+      <attribute id="Personnel">
+        <descriptions defaultDescription="Personnel"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Proj_VBPA" columnName="PERNR"/>
+      </attribute>
+      <attribute id="AddressID">
+        <descriptions defaultDescription="Address ID"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Proj_VBPA" columnName="ADRNR"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+      </shape>
+      <shape modelObjectName="VBPA" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="220" y="194"/>
+      </shape>
+      <shape modelObjectName="Proj_VBPA" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="166"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

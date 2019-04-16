@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="sap.hba.ecc::SalesOrganization" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" dataCategory="DEFAULT" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Projection" runWithInvokerPrivileges="false" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="Master data for sales organization"/>
+  <metadata changedAt="2014-07-17 17:46:21.122"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="TVKO">
+      <resourceUri>sap.hba.ecc::TVKO</resourceUri>
+    </DataSource>
+    <DataSource id="T001">
+      <resourceUri>sap.hba.ecc::T001</resourceUri>
+    </DataSource>
+    <DataSource id="TVKOT">
+      <resourceUri>sap.hba.ecc::TVKOT</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="VKORG"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="BUKRS"/>
+        <viewAttribute id="KUNNR"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#TVKO">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="BUKRS"/>
+        <viewAttribute id="LAND1"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="PERIV"/>
+        <viewAttribute id="BUTXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#T001">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERIV" source="PERIV"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUTXT" source="BUTXT"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="leftOuter">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="BUKRS"/>
+        <viewAttribute id="VKORG"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="KUNNR"/>
+        <viewAttribute id="LAND1"/>
+        <viewAttribute id="BUTXT"/>
+        <viewAttribute id="WAERS_1"/>
+        <viewAttribute id="PERIV"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+      </input>
+      <input node="#Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUTXT" source="BUTXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS_1" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERIV" source="PERIV"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="BUKRS"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="C1_1" joinType="textTable" languageColumn="SPRAS">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="VKORG"/>
+        <viewAttribute id="BUKRS"/>
+        <viewAttribute id="LAND1"/>
+        <viewAttribute id="BUTXT"/>
+        <viewAttribute id="KUNNR"/>
+        <viewAttribute id="WAERS_1"/>
+        <viewAttribute id="WAERS"/>
+        <viewAttribute id="PERIV"/>
+        <viewAttribute id="VTEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUTXT" source="BUTXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KUNNR" source="KUNNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS_1" source="WAERS_1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PERIV" source="PERIV"/>
+      </input>
+      <input node="#TVKOT">
+        <mapping xsi:type="Calculation:AttributeMapping" target="VTEXT" source="VTEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="VKORG"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_3">
+    <attributes>
+      <attribute id="SAPClient" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="MANDT"/>
+      </attribute>
+      <attribute id="SalesOrganization" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Sales Organization"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="VKORG"/>
+      </attribute>
+      <attribute id="SalesOrganizationName" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Sales Organization Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="VTEXT"/>
+      </attribute>
+      <attribute id="SalesOrganizationCurrency" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Sales Organization Currency"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="WAERS"/>
+      </attribute>
+      <attribute id="CompanyCode" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Company Code"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="BUKRS"/>
+      </attribute>
+      <attribute id="CompanyCodeName" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Company Code Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="BUTXT"/>
+      </attribute>
+      <attribute id="Customer" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="KUNNR"/>
+      </attribute>
+      <attribute id="Country" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Country"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="LAND1"/>
+      </attribute>
+      <attribute id="CompanyCodeCurrency" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Company Code Currency"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="WAERS_1"/>
+      </attribute>
+      <attribute id="FiscalYearVariant" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Fiscal Year Variant"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_3" columnName="PERIV"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="99" y="87"/>
+        <rectangleSize/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="362"/>
+        <rectangleSize/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="362"/>
+        <rectangleSize/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="264"/>
+        <rectangleSize/>
+      </shape>
+      <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="166"/>
+        <rectangleSize/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

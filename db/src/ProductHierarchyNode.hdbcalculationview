@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="sap.hba.ecc::ProductHierarchyNode" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hidden="true" dataCategory="DEFAULT" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Projection" runWithInvokerPrivileges="false" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="Master data for product hierarchy node"/>
+  <metadata changedAt="2013-06-26 10:49:29.52" createdAt="2012-08-31 16:29:34.052"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="T179">
+      <resourceUri>sap.hba.ecc::T179</resourceUri>
+    </DataSource>
+    <DataSource id="T179T">
+      <resourceUri>sap.hba.ecc::T179T</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="textTable" languageColumn="SPRAS">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="PRODH"/>
+        <viewAttribute id="VTEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#T179">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      </input>
+      <input node="#T179T">
+        <mapping xsi:type="Calculation:AttributeMapping" target="VTEXT" source="VTEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="PRODH"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_1">
+    <attributes>
+      <attribute id="SAPClient">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="MANDT"/>
+      </attribute>
+      <attribute id="ProductHierarchyNode">
+        <descriptions defaultDescription="Product Hierarchy Node"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="PRODH"/>
+      </attribute>
+      <attribute id="ProductHierarchyNodeName">
+        <descriptions defaultDescription="Product Hierarchy Node Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="VTEXT"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+      </shape>
+      <shape modelObjectName="T179" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="10" y="170"/>
+      </shape>
+      <shape modelObjectName="T179T" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="130" y="164"/>
+      </shape>
+      <shape modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="166"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

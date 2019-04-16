@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="sap.hba.ecc::UnitOfMeasureName" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" dataCategory="DEFAULT" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Projection" runWithInvokerPrivileges="false" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="Names of units of measure in different languages "/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="T006A">
+      <resourceUri>sap.hba.ecc::T006A</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="T006A">
+    <attributes>
+      <attribute id="SAPClient" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="T006A" columnName="MANDT"/>
+      </attribute>
+      <attribute id="Language" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Language"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="T006A" columnName="SPRAS"/>
+      </attribute>
+      <attribute id="UnitOfMeasure" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Unit Of Measure"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="T006A" columnName="MSEHI"/>
+      </attribute>
+      <attribute id="UnitOfMeasure_E" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Unit Of Measure Commercial Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="T006A" columnName="MSEH3"/>
+      </attribute>
+      <attribute id="UnitOfMeasureTechnicalName" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Unit Of Measure Technical Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="T006A" columnName="MSEH6"/>
+      </attribute>
+      <attribute id="UnitOfMeasureName" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Unit Of Measure Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="T006A" columnName="MSEHT"/>
+      </attribute>
+      <attribute id="UnitOfMeasureLongName" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="Unit Of Measure Long Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="T006A" columnName="MSEHL"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+        <rectangleSize/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

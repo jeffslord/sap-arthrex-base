@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="sap.hba.ecc::VBRK_COM" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hidden="false" dataCategory="DEFAULT" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Aggregation" runWithInvokerPrivileges="false" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="Private view"/>
+  <metadata changedAt="2013-06-27 14:36:14.102" createdAt="2012-08-28 13:02:29.26"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="VBRK">
+      <resourceUri>sap.hba.ecc::VBRK</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="VBELN"/>
+        <viewAttribute id="FKART"/>
+        <viewAttribute id="FKTYP"/>
+        <viewAttribute id="VBTYP"/>
+        <viewAttribute id="WAERK"/>
+        <viewAttribute id="VKORG"/>
+        <viewAttribute id="VTWEG"/>
+        <viewAttribute id="KALSM"/>
+        <viewAttribute id="KNUMV"/>
+        <viewAttribute id="VSBED"/>
+        <viewAttribute id="FKDAT"/>
+        <viewAttribute id="BELNR"/>
+        <viewAttribute id="GJAHR"/>
+        <viewAttribute id="POPER"/>
+        <viewAttribute id="KONDA"/>
+        <viewAttribute id="KDGRP"/>
+        <viewAttribute id="BZIRK"/>
+        <viewAttribute id="PLTYP"/>
+        <viewAttribute id="INCO1"/>
+        <viewAttribute id="INCO2"/>
+        <viewAttribute id="EXPKZ"/>
+        <viewAttribute id="RFBSK"/>
+        <viewAttribute id="MRNKZ"/>
+        <viewAttribute id="KURRF"/>
+        <viewAttribute id="CPKUR"/>
+        <viewAttribute id="VALTG"/>
+        <viewAttribute id="VALDT"/>
+        <viewAttribute id="ZTERM"/>
+        <viewAttribute id="ZLSCH"/>
+        <viewAttribute id="KTGRD"/>
+        <viewAttribute id="LAND1"/>
+        <viewAttribute id="REGIO"/>
+        <viewAttribute id="COUNC"/>
+        <viewAttribute id="CITYC"/>
+        <viewAttribute id="BUKRS"/>
+        <viewAttribute id="TAXK2"/>
+        <viewAttribute id="TAXK1"/>
+        <viewAttribute id="TAXK8"/>
+        <viewAttribute id="TAXK9"/>
+        <viewAttribute id="TAXK7"/>
+        <viewAttribute id="TAXK6"/>
+        <viewAttribute id="TAXK4"/>
+        <viewAttribute id="TAXK5"/>
+        <viewAttribute id="TAXK3"/>
+        <viewAttribute id="NETWR"/>
+        <viewAttribute id="ZUKRI"/>
+        <viewAttribute id="ERNAM"/>
+        <viewAttribute id="ERZET"/>
+        <viewAttribute id="ERDAT"/>
+        <viewAttribute id="KUNRG"/>
+        <viewAttribute id="KUNAG"/>
+        <viewAttribute id="MABER"/>
+        <viewAttribute id="STWAE"/>
+        <viewAttribute id="EXNUM"/>
+        <viewAttribute id="STCEG"/>
+        <viewAttribute id="AEDAT"/>
+        <viewAttribute id="SFAKN"/>
+        <viewAttribute id="KNUMA"/>
+        <viewAttribute id="FKART_RL"/>
+        <viewAttribute id="FKDAT_RL"/>
+        <viewAttribute id="KURST"/>
+        <viewAttribute id="MSCHL"/>
+        <viewAttribute id="MANSP"/>
+        <viewAttribute id="SPART"/>
+        <viewAttribute id="KKBER"/>
+        <viewAttribute id="KNKLI"/>
+        <viewAttribute id="CMWAE"/>
+        <viewAttribute id="CMKUF"/>
+        <viewAttribute id="HITYP_PR"/>
+        <viewAttribute id="BSTNK_VF"/>
+        <viewAttribute id="VBUND"/>
+        <viewAttribute id="FKART_AB"/>
+        <viewAttribute id="LANDTX"/>
+        <viewAttribute id="STCEG_H"/>
+        <viewAttribute id="STCEG_L"/>
+        <viewAttribute id="XBLNR"/>
+        <viewAttribute id="ZUONR"/>
+        <viewAttribute id="MWSBK"/>
+        <viewAttribute id="LOGSYS"/>
+        <viewAttribute id="FKSTO"/>
+        <viewAttribute id="KURRF_DAT"/>
+        <viewAttribute id="KIDNO"/>
+        <viewAttribute id="VKONT"/>
+        <viewAttribute id="LCNUM"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#VBRK">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VBELN" source="VBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKART" source="FKART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKTYP" source="FKTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VBTYP" source="VBTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAERK" source="WAERK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KALSM" source="KALSM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KNUMV" source="KNUMV"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VSBED" source="VSBED"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKDAT" source="FKDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BELNR" source="BELNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GJAHR" source="GJAHR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POPER" source="POPER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KONDA" source="KONDA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK" source="BZIRK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PLTYP" source="PLTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EXPKZ" source="EXPKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFBSK" source="RFBSK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MRNKZ" source="MRNKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KURRF" source="KURRF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CPKUR" source="CPKUR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VALTG" source="VALTG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VALDT" source="VALDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZLSCH" source="ZLSCH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTGRD" source="KTGRD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COUNC" source="COUNC"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CITYC" source="CITYC"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXK2" source="TAXK2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXK1" source="TAXK1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXK8" source="TAXK8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXK9" source="TAXK9"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXK7" source="TAXK7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXK6" source="TAXK6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXK4" source="TAXK4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXK5" source="TAXK5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXK3" source="TAXK3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETWR" source="NETWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZUKRI" source="ZUKRI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERZET" source="ERZET"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KUNRG" source="KUNRG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KUNAG" source="KUNAG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MABER" source="MABER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STWAE" source="STWAE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EXNUM" source="EXNUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AEDAT" source="AEDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SFAKN" source="SFAKN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KNUMA" source="KNUMA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKART_RL" source="FKART_RL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKDAT_RL" source="FKDAT_RL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KURST" source="KURST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MSCHL" source="MSCHL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANSP" source="MANSP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KKBER" source="KKBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KNKLI" source="KNKLI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMWAE" source="CMWAE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMKUF" source="CMKUF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="HITYP_PR" source="HITYP_PR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BSTNK_VF" source="BSTNK_VF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKART_AB" source="FKART_AB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LANDTX" source="LANDTX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCEG_H" source="STCEG_H"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCEG_L" source="STCEG_L"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XBLNR" source="XBLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ZUONR" source="ZUONR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MWSBK" source="MWSBK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOGSYS" source="LOGSYS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKSTO" source="FKSTO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KURRF_DAT" source="KURRF_DAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KIDNO" source="KIDNO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VKONT" source="VKONT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LCNUM" source="LCNUM"/>
+      </input>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Projection_1">
+    <attributes>
+      <attribute id="SAPClient">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MANDT"/>
+      </attribute>
+      <attribute id="BillingDocument">
+        <descriptions defaultDescription="Billing Document"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VBELN"/>
+      </attribute>
+      <attribute id="BillingDocumentType">
+        <descriptions defaultDescription="Billing Document Type"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FKART"/>
+      </attribute>
+      <attribute id="BillingDocumentCategory">
+        <descriptions defaultDescription="Billing Document Category"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FKTYP"/>
+      </attribute>
+      <attribute id="SDDocumentCategory">
+        <descriptions defaultDescription="SD Document Category"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VBTYP"/>
+      </attribute>
+      <attribute id="TransactionCurrency">
+        <descriptions defaultDescription="Transaction Currency"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="WAERK"/>
+      </attribute>
+      <attribute id="SalesOrganization">
+        <descriptions defaultDescription="Sales Organization"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VKORG"/>
+      </attribute>
+      <attribute id="DistributionChannel">
+        <descriptions defaultDescription="Distribution Channel"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VTWEG"/>
+      </attribute>
+      <attribute id="SDPricingProcedure">
+        <descriptions defaultDescription="SD Pricing Procedure"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KALSM"/>
+      </attribute>
+      <attribute id="SalesDocumentCondition">
+        <descriptions defaultDescription="Sales Document Condition"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KNUMV"/>
+      </attribute>
+      <attribute id="ShippingCondition">
+        <descriptions defaultDescription="Shipping Condition"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VSBED"/>
+      </attribute>
+      <attribute id="BillingDocumentDate">
+        <descriptions defaultDescription="Billing Document Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FKDAT"/>
+      </attribute>
+      <attribute id="AccountingDocument">
+        <descriptions defaultDescription="Accounting Document"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="BELNR"/>
+      </attribute>
+      <attribute id="FiscalYear">
+        <descriptions defaultDescription="Fiscal Year"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="GJAHR"/>
+      </attribute>
+      <attribute id="FiscalPeriod">
+        <descriptions defaultDescription="Fiscal Period"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="POPER"/>
+      </attribute>
+      <attribute id="CustomerPriceGroup">
+        <descriptions defaultDescription="Customer Price Group"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KONDA"/>
+      </attribute>
+      <attribute id="CustomerGroup">
+        <descriptions defaultDescription="Customer Group"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KDGRP"/>
+      </attribute>
+      <attribute id="SalesDistrict">
+        <descriptions defaultDescription="Sales District"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="BZIRK"/>
+      </attribute>
+      <attribute id="PriceListType">
+        <descriptions defaultDescription="Price List Type"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="PLTYP"/>
+      </attribute>
+      <attribute id="IncotermsClassification">
+        <descriptions defaultDescription="Incoterms Classification"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="INCO1"/>
+      </attribute>
+      <attribute id="IncotermsTransferLocation">
+        <descriptions defaultDescription="Incoterms Transfer Location"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="INCO2"/>
+      </attribute>
+      <attribute id="IsExportDelivery">
+        <descriptions defaultDescription="Is Export Delivery"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="EXPKZ"/>
+      </attribute>
+      <attribute id="AccountingTransferStatus">
+        <descriptions defaultDescription="Accounting Transfer Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="RFBSK"/>
+      </attribute>
+      <attribute id="ManualInvoiceMaintIsRelevant">
+        <descriptions defaultDescription="Manual Invoice Maint Is Relevant"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MRNKZ"/>
+      </attribute>
+      <attribute id="AccountingExchangeRate">
+        <descriptions defaultDescription="Accounting Exchange Rate"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KURRF"/>
+      </attribute>
+      <attribute id="AccountingExchangeRateIsSet">
+        <descriptions defaultDescription="Accounting Exchange Rate Is Set"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CPKUR"/>
+      </attribute>
+      <attribute id="AdditionalValueDays">
+        <descriptions defaultDescription="Additional Value Days"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VALTG"/>
+      </attribute>
+      <attribute id="FixedValueDate">
+        <descriptions defaultDescription="Fixed Value Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VALDT"/>
+      </attribute>
+      <attribute id="CustomerPaymentTerms">
+        <descriptions defaultDescription="Customer Payment Terms"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="ZTERM"/>
+      </attribute>
+      <attribute id="PaymentMethod">
+        <descriptions defaultDescription="Payment Method"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="ZLSCH"/>
+      </attribute>
+      <attribute id="CustomerAccountAssignmentGroup">
+        <descriptions defaultDescription="Customer Account Assignment Group"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KTGRD"/>
+      </attribute>
+      <attribute id="Country">
+        <descriptions defaultDescription="Country"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="LAND1"/>
+      </attribute>
+      <attribute id="Region">
+        <descriptions defaultDescription="Region"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="REGIO"/>
+      </attribute>
+      <attribute id="County">
+        <descriptions defaultDescription="County"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="COUNC"/>
+      </attribute>
+      <attribute id="CityCode">
+        <descriptions defaultDescription="City Code"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CITYC"/>
+      </attribute>
+      <attribute id="CompanyCode">
+        <descriptions defaultDescription="Company Code"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="BUKRS"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification1">
+        <descriptions defaultDescription="Customer Tax Classification 1"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="TAXK1"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification2">
+        <descriptions defaultDescription="Customer Tax Classification 2"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="TAXK2"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification3">
+        <descriptions defaultDescription="Customer Tax Classification 3"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="TAXK3"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification4">
+        <descriptions defaultDescription="Customer Tax Classification 4"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="TAXK4"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification5">
+        <descriptions defaultDescription="Customer Tax Classification 5"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="TAXK5"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification6">
+        <descriptions defaultDescription="Customer Tax Classification 6"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="TAXK6"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification7">
+        <descriptions defaultDescription="Customer Tax Classification 7"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="TAXK7"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification8">
+        <descriptions defaultDescription="Customer Tax Classification 8"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="TAXK8"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification9">
+        <descriptions defaultDescription="Customer Tax Classification 9"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="TAXK9"/>
+      </attribute>
+      <attribute id="BillingDocCombinationCriteria">
+        <descriptions defaultDescription="Billing Doc Combination Criteria"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="ZUKRI"/>
+      </attribute>
+      <attribute id="CreatedByUser">
+        <descriptions defaultDescription="Created By User"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="ERNAM"/>
+      </attribute>
+      <attribute id="CreationTime">
+        <descriptions defaultDescription="Creation Time"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="ERZET"/>
+      </attribute>
+      <attribute id="CreationDate">
+        <descriptions defaultDescription="Creation Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="ERDAT"/>
+      </attribute>
+      <attribute id="PayerParty">
+        <descriptions defaultDescription="Payer Party"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KUNRG"/>
+      </attribute>
+      <attribute id="SoldToParty">
+        <descriptions defaultDescription="Sold To Party"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KUNAG"/>
+      </attribute>
+      <attribute id="DunningArea">
+        <descriptions defaultDescription="Dunning Area"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MABER"/>
+      </attribute>
+      <attribute id="StatisticsCurrency">
+        <descriptions defaultDescription="Statistics Currency"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="STWAE"/>
+      </attribute>
+      <attribute id="ForeignTrade">
+        <descriptions defaultDescription="Foreign Trade"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="EXNUM"/>
+      </attribute>
+      <attribute id="VATRegistration">
+        <descriptions defaultDescription="VAT Registration"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="STCEG"/>
+      </attribute>
+      <attribute id="LastChangeDate">
+        <descriptions defaultDescription="Last Change Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="AEDAT"/>
+      </attribute>
+      <attribute id="CancelledBillingDocument">
+        <descriptions defaultDescription="Cancelled Billing Document"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="SFAKN"/>
+      </attribute>
+      <attribute id="CustomerRebateAgreement">
+        <descriptions defaultDescription="Customer Rebate Agreement"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KNUMA"/>
+      </attribute>
+      <attribute id="InvoiceListType">
+        <descriptions defaultDescription="Invoice List Type"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FKART_RL"/>
+      </attribute>
+      <attribute id="InvoiceListBillingDate">
+        <descriptions defaultDescription="Invoice List Billing Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FKDAT_RL"/>
+      </attribute>
+      <attribute id="ExchangeRateType">
+        <descriptions defaultDescription="Exchange Rate Type"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KURST"/>
+      </attribute>
+      <attribute id="MaximumDunningLevel">
+        <descriptions defaultDescription="Maximum Dunning Level"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MSCHL"/>
+      </attribute>
+      <attribute id="DunningBlockingReasonCode">
+        <descriptions defaultDescription="Dunning Blocking Reason Code"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MANSP"/>
+      </attribute>
+      <attribute id="Division">
+        <descriptions defaultDescription="Division"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="SPART"/>
+      </attribute>
+      <attribute id="CreditControlArea">
+        <descriptions defaultDescription="Credit Control Area"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KKBER"/>
+      </attribute>
+      <attribute id="CustomerCreditAccount">
+        <descriptions defaultDescription="Customer Credit Account"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KNKLI"/>
+      </attribute>
+      <attribute id="ControllingAreaCurrency">
+        <descriptions defaultDescription="Controlling Area Currency"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMWAE"/>
+      </attribute>
+      <attribute id="CreditDataExchangeRate">
+        <descriptions defaultDescription="Credit Data Exchange Rate"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMKUF"/>
+      </attribute>
+      <attribute id="HierarchyTypePricing">
+        <descriptions defaultDescription="Hierarchy Type Pricing"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="HITYP_PR"/>
+      </attribute>
+      <attribute id="PurchaseOrderByCustomer">
+        <descriptions defaultDescription="Purchase Order By Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="BSTNK_VF"/>
+      </attribute>
+      <attribute id="PartnerCompany">
+        <descriptions defaultDescription="Partner Company"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VBUND"/>
+      </attribute>
+      <attribute id="AccrualBillingDocumentType">
+        <descriptions defaultDescription="Accrual Billing Document Type"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FKART_AB"/>
+      </attribute>
+      <attribute id="TaxDepartureCountry">
+        <descriptions defaultDescription="Tax Departure Country"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="LANDTX"/>
+      </attribute>
+      <attribute id="VATRegistrationOrigin">
+        <descriptions defaultDescription="VAT Registration Origin"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="STCEG_H"/>
+      </attribute>
+      <attribute id="CountryOfVATRegistration">
+        <descriptions defaultDescription="Country Of VAT Registration"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="STCEG_L"/>
+      </attribute>
+      <attribute id="DocumentReferenceID">
+        <descriptions defaultDescription="Document Reference ID"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="XBLNR"/>
+      </attribute>
+      <attribute id="AssignmentReference">
+        <descriptions defaultDescription="Assignment Reference"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="ZUONR"/>
+      </attribute>
+      <attribute id="LogicalSystem">
+        <descriptions defaultDescription="Logical System"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="LOGSYS"/>
+      </attribute>
+      <attribute id="BillingDocumentIsCancelled">
+        <descriptions defaultDescription="Billing Document Is Cancelled"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FKSTO"/>
+      </attribute>
+      <attribute id="InternalFinancialDocument">
+        <descriptions defaultDescription="Internal Financial Document"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="LCNUM"/>
+      </attribute>
+      <attribute id="ExchangeRateDate">
+        <descriptions defaultDescription="Exchange Rate Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KURRF_DAT"/>
+      </attribute>
+      <attribute id="PaymentReference">
+        <descriptions defaultDescription="Payment Reference"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KIDNO"/>
+      </attribute>
+      <attribute id="ContractAccount">
+        <descriptions defaultDescription="Contract Account"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VKONT"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="TotalNetAmount" aggregationType="sum" measureType="amount">
+        <descriptions defaultDescription="Total Net Amount"/>
+        <unitCurrencyAttribute attributeName="TransactionCurrency"/>
+        <measureMapping columnObjectName="Projection_1" columnName="NETWR"/>
+      </measure>
+      <measure id="TaxAmount" aggregationType="sum" measureType="amount">
+        <descriptions defaultDescription="Tax Amount"/>
+        <unitCurrencyAttribute attributeName="TransactionCurrency"/>
+        <measureMapping columnObjectName="Projection_1" columnName="MWSBK"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+      </shape>
+      <shape modelObjectName="VBRK" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="70" y="224"/>
+      </shape>
+      <shape modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="166"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="sap.hba.ecc::VBUK_COM" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hidden="true" dataCategory="DEFAULT" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Projection" runWithInvokerPrivileges="false" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="Private view"/>
+  <metadata changedAt="2013-06-27 14:37:38.467" createdAt="2012-08-28 13:02:38.809"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="VBUK">
+      <resourceUri>sap.hba.ecc::VBUK</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="VBELN"/>
+        <viewAttribute id="ABSTK"/>
+        <viewAttribute id="BESTK"/>
+        <viewAttribute id="BLOCK"/>
+        <viewAttribute id="BUCHK"/>
+        <viewAttribute id="CMGST"/>
+        <viewAttribute id="CMPS0"/>
+        <viewAttribute id="CMPS1"/>
+        <viewAttribute id="CMPS2"/>
+        <viewAttribute id="CMPSA"/>
+        <viewAttribute id="CMPSB"/>
+        <viewAttribute id="CMPSC"/>
+        <viewAttribute id="CMPSD"/>
+        <viewAttribute id="CMPSE"/>
+        <viewAttribute id="CMPSF"/>
+        <viewAttribute id="CMPSG"/>
+        <viewAttribute id="CMPSH"/>
+        <viewAttribute id="CMPSI"/>
+        <viewAttribute id="CMPSJ"/>
+        <viewAttribute id="CMPSK"/>
+        <viewAttribute id="CMPSL"/>
+        <viewAttribute id="CMPSM"/>
+        <viewAttribute id="COSTA"/>
+        <viewAttribute id="DCSTK"/>
+        <viewAttribute id="FKIVK"/>
+        <viewAttribute id="FKSAK"/>
+        <viewAttribute id="FKSTK"/>
+        <viewAttribute id="FMSTK"/>
+        <viewAttribute id="FSSTK"/>
+        <viewAttribute id="GBSTK"/>
+        <viewAttribute id="KOQUK"/>
+        <viewAttribute id="KOSTK"/>
+        <viewAttribute id="LFGSK"/>
+        <viewAttribute id="LFSTK"/>
+        <viewAttribute id="LSSTK"/>
+        <viewAttribute id="LVSTK"/>
+        <viewAttribute id="MANEK"/>
+        <viewAttribute id="PDSTK"/>
+        <viewAttribute id="PKSTK"/>
+        <viewAttribute id="RELIK"/>
+        <viewAttribute id="RFGSK"/>
+        <viewAttribute id="RFSTK"/>
+        <viewAttribute id="RRSTA"/>
+        <viewAttribute id="SPSTG"/>
+        <viewAttribute id="TRSTA"/>
+        <viewAttribute id="UVALL"/>
+        <viewAttribute id="UVALS"/>
+        <viewAttribute id="UVFAK"/>
+        <viewAttribute id="UVFAS"/>
+        <viewAttribute id="UVGEK"/>
+        <viewAttribute id="UVK01"/>
+        <viewAttribute id="UVK02"/>
+        <viewAttribute id="UVK03"/>
+        <viewAttribute id="UVK04"/>
+        <viewAttribute id="UVK05"/>
+        <viewAttribute id="UVPAK"/>
+        <viewAttribute id="UVPAS"/>
+        <viewAttribute id="UVPIK"/>
+        <viewAttribute id="UVPIS"/>
+        <viewAttribute id="UVPRS"/>
+        <viewAttribute id="UVS01"/>
+        <viewAttribute id="UVS02"/>
+        <viewAttribute id="UVS03"/>
+        <viewAttribute id="UVS04"/>
+        <viewAttribute id="UVS05"/>
+        <viewAttribute id="UVVLK"/>
+        <viewAttribute id="UVVLS"/>
+        <viewAttribute id="UVWAK"/>
+        <viewAttribute id="UVWAS"/>
+        <viewAttribute id="VBOBJ"/>
+        <viewAttribute id="VBTYP"/>
+        <viewAttribute id="VESTK"/>
+        <viewAttribute id="VLSTK"/>
+        <viewAttribute id="WBSTK"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#VBUK">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VBELN" source="VBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ABSTK" source="ABSTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BESTK" source="BESTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BLOCK" source="BLOCK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BUCHK" source="BUCHK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMGST" source="CMGST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPS0" source="CMPS0"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPS1" source="CMPS1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPS2" source="CMPS2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPSA" source="CMPSA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPSB" source="CMPSB"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPSC" source="CMPSC"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPSD" source="CMPSD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPSE" source="CMPSE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPSF" source="CMPSF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPSG" source="CMPSG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPSH" source="CMPSH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPSI" source="CMPSI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPSJ" source="CMPSJ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPSK" source="CMPSK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPSL" source="CMPSL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPSM" source="CMPSM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="COSTA" source="COSTA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DCSTK" source="DCSTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKIVK" source="FKIVK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKSAK" source="FKSAK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKSTK" source="FKSTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FMSTK" source="FMSTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FSSTK" source="FSSTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GBSTK" source="GBSTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KOQUK" source="KOQUK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KOSTK" source="KOSTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFGSK" source="LFGSK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LFSTK" source="LFSTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LSSTK" source="LSSTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LVSTK" source="LVSTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANEK" source="MANEK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PDSTK" source="PDSTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PKSTK" source="PKSTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RELIK" source="RELIK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFGSK" source="RFGSK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RFSTK" source="RFSTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RRSTA" source="RRSTA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPSTG" source="SPSTG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TRSTA" source="TRSTA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVALL" source="UVALL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVALS" source="UVALS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVFAK" source="UVFAK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVFAS" source="UVFAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVGEK" source="UVGEK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVK01" source="UVK01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVK02" source="UVK02"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVK03" source="UVK03"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVK04" source="UVK04"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVK05" source="UVK05"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVPAK" source="UVPAK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVPAS" source="UVPAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVPIK" source="UVPIK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVPIS" source="UVPIS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVPRS" source="UVPRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVS01" source="UVS01"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVS02" source="UVS02"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVS03" source="UVS03"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVS04" source="UVS04"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVS05" source="UVS05"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVVLK" source="UVVLK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVVLS" source="UVVLS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVWAK" source="UVWAK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVWAS" source="UVWAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VBOBJ" source="VBOBJ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VBTYP" source="VBTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VESTK" source="VESTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VLSTK" source="VLSTK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WBSTK" source="WBSTK"/>
+      </input>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Projection_1">
+    <attributes>
+      <attribute id="SAPClient">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MANDT"/>
+      </attribute>
+      <attribute id="SDDocument">
+        <descriptions defaultDescription="SD Document"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VBELN"/>
+      </attribute>
+      <attribute id="OverallSDDocumentRejectionSts">
+        <descriptions defaultDescription="Overall SD Document Rejection Sts"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="ABSTK"/>
+      </attribute>
+      <attribute id="OverallDelivConfStatus">
+        <descriptions defaultDescription="Overall Deliv Conf Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="BESTK"/>
+      </attribute>
+      <attribute id="IsMarkedForArchiving">
+        <descriptions defaultDescription="Is Marked For Archiving"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="BLOCK"/>
+      </attribute>
+      <attribute id="TotalCreditCheckStatus">
+        <descriptions defaultDescription="Total Credit Check Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMGST"/>
+      </attribute>
+      <attribute id="CreditCheckStatusOfReserve1">
+        <descriptions defaultDescription="Credit Check Status Of Reserve 1"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPS0"/>
+      </attribute>
+      <attribute id="CreditCheckStatusOfReserve2">
+        <descriptions defaultDescription="Credit Check Status Of Reserve 2"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPS1"/>
+      </attribute>
+      <attribute id="CreditCheckStatusOfReserve3">
+        <descriptions defaultDescription="Credit Check Status Of Reserve 3"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPS2"/>
+      </attribute>
+      <attribute id="StaticCreditLimitCheckStatus">
+        <descriptions defaultDescription="Static Credit Limit Check Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPSA"/>
+      </attribute>
+      <attribute id="DynamicCreditLimitCheckStatus">
+        <descriptions defaultDescription="Dynamic Credit Limit Check Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPSB"/>
+      </attribute>
+      <attribute id="MaxDocValueCreditCheckStatus">
+        <descriptions defaultDescription="Max Doc Value Credit Check Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPSC"/>
+      </attribute>
+      <attribute id="PaymentTermCreditCheckStatus">
+        <descriptions defaultDescription="Payment Term Credit Check Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPSD"/>
+      </attribute>
+      <attribute id="CustRevDateCreditCheckStatus">
+        <descriptions defaultDescription="Cust Rev Date Credit Check Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPSE"/>
+      </attribute>
+      <attribute id="OpenItemDueCreditCheckStatus">
+        <descriptions defaultDescription="Open Item Due Credit Check Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPSF"/>
+      </attribute>
+      <attribute id="OldestOpenItmCreditCheckStatus">
+        <descriptions defaultDescription="Oldest Open Itm Credit Check Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPSG"/>
+      </attribute>
+      <attribute id="HighestDunLvlCreditCheckStatus">
+        <descriptions defaultDescription="Highest Dun Lvl Credit Check Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPSH"/>
+      </attribute>
+      <attribute id="FinDocCreditCheckStatus">
+        <descriptions defaultDescription="Fin Doc Credit Check Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPSI"/>
+      </attribute>
+      <attribute id="ExprtInsurCreditCheckStatus">
+        <descriptions defaultDescription="Exprt Insur Credit Check Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPSJ"/>
+      </attribute>
+      <attribute id="PaytAuthznCreditCheckStatus">
+        <descriptions defaultDescription="Payt Authzn Credit Check Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPSK"/>
+      </attribute>
+      <attribute id="CreditCheckStatusOfReserve4">
+        <descriptions defaultDescription="Credit Check Status Of Reserve 4"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPSL"/>
+      </attribute>
+      <attribute id="OverallPurchaseConfStatus">
+        <descriptions defaultDescription="Overall Purchase Conf Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="COSTA"/>
+      </attribute>
+      <attribute id="OverallIntcoBillingStatus">
+        <descriptions defaultDescription="Overall Intco Billing Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FKIVK"/>
+      </attribute>
+      <attribute id="OverallOrdReltdBillgStatus">
+        <descriptions defaultDescription="Overall Ord Reltd Billg Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FKSAK"/>
+      </attribute>
+      <attribute id="OverallDelivReltdBillgStatus">
+        <descriptions defaultDescription="Overall Deliv Reltd Billg Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FKSTK"/>
+      </attribute>
+      <attribute id="OverallBillingBlockStatus">
+        <descriptions defaultDescription="Overall Billing Block Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FSSTK"/>
+      </attribute>
+      <attribute id="OverallSDProcessStatus">
+        <descriptions defaultDescription="Overall SD Process Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="GBSTK"/>
+      </attribute>
+      <attribute id="OverallPickingConfStatus">
+        <descriptions defaultDescription="Overall Picking Conf Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KOQUK"/>
+      </attribute>
+      <attribute id="OverallPickingStatus">
+        <descriptions defaultDescription="Overall Picking Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KOSTK"/>
+      </attribute>
+      <attribute id="OverallTotalDeliveryStatus">
+        <descriptions defaultDescription="Overall Total Delivery Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="LFGSK"/>
+      </attribute>
+      <attribute id="OverallDeliveryStatus">
+        <descriptions defaultDescription="Overall Delivery Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="LFSTK"/>
+      </attribute>
+      <attribute id="OverallDeliveryBlockStatus">
+        <descriptions defaultDescription="Overall Delivery Block Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="LSSTK"/>
+      </attribute>
+      <attribute id="OverallWarehouseActivityStatus">
+        <descriptions defaultDescription="Overall Warehouse Activity Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="LVSTK"/>
+      </attribute>
+      <attribute id="ContractManualCompletion">
+        <descriptions defaultDescription="Contract Manual Completion"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MANEK"/>
+      </attribute>
+      <attribute id="OverallProofOfDeliveryStatus">
+        <descriptions defaultDescription="Overall Proof Of Delivery Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="PDSTK"/>
+      </attribute>
+      <attribute id="OverallPackingStatus">
+        <descriptions defaultDescription="Overall Packing Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="PKSTK"/>
+      </attribute>
+      <attribute id="InvoiceListStatus">
+        <descriptions defaultDescription="Invoice List Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="RELIK"/>
+      </attribute>
+      <attribute id="OverallTotalSDDocRefStatus">
+        <descriptions defaultDescription="Overall Total SD Doc Ref Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="RFGSK"/>
+      </attribute>
+      <attribute id="OverallSDDocReferenceStatus">
+        <descriptions defaultDescription="Overall SD Doc Reference Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="RFSTK"/>
+      </attribute>
+      <attribute id="OverallRevenueDetnStatus">
+        <descriptions defaultDescription="Overall Revenue Detn Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="RRSTA"/>
+      </attribute>
+      <attribute id="TotalBlockStatus">
+        <descriptions defaultDescription="Total Block Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="SPSTG"/>
+      </attribute>
+      <attribute id="TransportationPlanningStatus">
+        <descriptions defaultDescription="Transportation Planning Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="TRSTA"/>
+      </attribute>
+      <attribute id="HdrGeneralIncompletionStatus">
+        <descriptions defaultDescription="Hdr General Incompletion Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVALL"/>
+      </attribute>
+      <attribute id="OvrlItmGeneralIncompletionSts">
+        <descriptions defaultDescription="Ovrl Itm General Incompletion Sts"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVALS"/>
+      </attribute>
+      <attribute id="HeaderBillgIncompletionStatus">
+        <descriptions defaultDescription="Header Billg Incompletion Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVFAK"/>
+      </attribute>
+      <attribute id="OvrlItmBillingIncompletionSts">
+        <descriptions defaultDescription="Ovrl Itm Billing Incompletion Sts"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVFAS"/>
+      </attribute>
+      <attribute id="HeaderPackingIncompletionSts">
+        <descriptions defaultDescription="Header Packing Incompletion Sts"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVPAK"/>
+      </attribute>
+      <attribute id="OvrlItmPackingIncompletionSts">
+        <descriptions defaultDescription="Ovrl Itm Packing Incompletion Sts"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVPAS"/>
+      </attribute>
+      <attribute id="HeaderPickgIncompletionStatus">
+        <descriptions defaultDescription="Header Pickg Incompletion Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVPIK"/>
+      </attribute>
+      <attribute id="OvrlItmPickingIncompletionSts">
+        <descriptions defaultDescription="Ovrl Itm Picking Incompletion Sts"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVPIS"/>
+      </attribute>
+      <attribute id="OverallPricingIncompletionSts">
+        <descriptions defaultDescription="Overall Pricing Incompletion Sts"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVPRS"/>
+      </attribute>
+      <attribute id="HeaderDelivIncompletionStatus">
+        <descriptions defaultDescription="Header Deliv Incompletion Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVVLK"/>
+      </attribute>
+      <attribute id="OvrlItmDelivIncompletionSts">
+        <descriptions defaultDescription="Ovrl Itm Deliv Incompletion Sts"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVVLS"/>
+      </attribute>
+      <attribute id="HdrGoodsMvtIncompletionStatus">
+        <descriptions defaultDescription="Hdr Goods Mvt Incompletion Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVWAK"/>
+      </attribute>
+      <attribute id="OvrlItmGdsMvtIncompletionSts">
+        <descriptions defaultDescription="Ovrl Itm Gds Mvt Incompletion Sts"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVWAS"/>
+      </attribute>
+      <attribute id="SDDocumentObject">
+        <descriptions defaultDescription="SD Document Object"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VBOBJ"/>
+      </attribute>
+      <attribute id="SDDocumentCategory">
+        <descriptions defaultDescription="SD Document Category"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VBTYP"/>
+      </attribute>
+      <attribute id="HandlingUnitInStock">
+        <descriptions defaultDescription="Handling Unit In Stock"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VESTK"/>
+      </attribute>
+      <attribute id="DistrStatusByDecentralizedWrhs">
+        <descriptions defaultDescription="Distr Status By Decentralized Wrhs"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VLSTK"/>
+      </attribute>
+      <attribute id="OverallGoodsMovementStatus">
+        <descriptions defaultDescription="Overall Goods Movement Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="WBSTK"/>
+      </attribute>
+      <attribute id="AccountingPostingStatus">
+        <descriptions defaultDescription="Accounting Posting Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="BUCHK"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+      </shape>
+      <shape modelObjectName="VBUK" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="70" y="214"/>
+      </shape>
+      <shape modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="166"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

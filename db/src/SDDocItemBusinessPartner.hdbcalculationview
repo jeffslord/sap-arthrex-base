@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="sap.hba.ecc::SDDocItemBusinessPartner" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hidden="true" dataCategory="DEFAULT" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Projection" runWithInvokerPrivileges="false" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="Reuse view for business partners for SD document items"/>
+  <metadata changedAt="2013-06-27 13:50:18.699" createdAt="2012-08-31 18:01:54.04"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="VBPA_ITM">
+      <resourceUri>sap.hba.ecc::VBPA_ITM</resourceUri>
+    </DataSource>
+    <DataSource id="Proj_4Partners$$$$VBPA_ITM$$">
+      <resourceUri>sap.hba.ecc::VBPA_ITM</resourceUri>
+    </DataSource>
+    <DataSource id="ADRC">
+      <resourceUri>sap.hba.ecc::ADRC</resourceUri>
+    </DataSource>
+    <DataSource id="Proj_2Employee$$$$VBPA_ITM$$">
+      <resourceUri>sap.hba.ecc::VBPA_ITM</resourceUri>
+    </DataSource>
+    <DataSource id="PA0001">
+      <resourceUri>sap.hba.ecc::PA0001</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_VBPA_ITM_Key">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="PartnerFunction"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#VBPA_ITM">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PartnerFunction" source="PartnerFunction"/>
+      </input>
+      <filter>(in (&quot;PartnerFunction&quot;,'AG','WE','RE','RG','VE','ZM'))</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:AggregationView" id="Aggr_All">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_VBPA_ITM_Key">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Proj_4Partners">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="PartnerFunction"/>
+        <viewAttribute id="AddressID"/>
+        <viewAttribute id="Customer"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Proj_4Partners$$$$VBPA_ITM$$">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PartnerFunction" source="PartnerFunction"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AddressID" source="AddressID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Customer" source="Customer"/>
+      </input>
+      <filter>(in (&quot;PartnerFunction&quot;,'AG','WE','RE','RG'))</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Proj_ADRC">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="AddressID"/>
+        <viewAttribute id="NATION"/>
+        <viewAttribute id="NAME1"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#ADRC">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="CLIENT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AddressID" source="ADDRNUMBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NATION" source="NATION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      </input>
+      <filter>(&quot;NATION&quot; ='')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_Customer_Name" cardinality="CN_1" joinType="leftOuter">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="PartnerFunction"/>
+        <viewAttribute id="Customer"/>
+        <viewAttribute id="NAME1"/>
+        <viewAttribute id="AddressID"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Proj_4Partners">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PartnerFunction" source="PartnerFunction"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Customer" source="Customer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AddressID" source="AddressID"/>
+      </input>
+      <input node="#Proj_ADRC">
+        <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AddressID" source="AddressID"/>
+      </input>
+      <joinAttribute name="SAPClient"/>
+      <joinAttribute name="AddressID"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Proj_SoldToParty">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="PartnerFunction"/>
+        <viewAttribute id="SoldToParty"/>
+        <viewAttribute id="SoldToPartyName"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_Customer_Name">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PartnerFunction" source="PartnerFunction"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToParty" source="Customer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToPartyName" source="NAME1"/>
+      </input>
+      <filter>(&quot;PartnerFunction&quot; ='AG')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_Sold_To_Party" cardinality="C1_1" joinType="leftOuter">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="SoldToParty"/>
+        <viewAttribute id="SoldToPartyName"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Aggr_All">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+      </input>
+      <input node="#Proj_SoldToParty">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToParty" source="SoldToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToPartyName" source="SoldToPartyName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+      </input>
+      <joinAttribute name="SAPClient"/>
+      <joinAttribute name="SalesDocument"/>
+      <joinAttribute name="SalesDocumentItem"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Proj_ShipToParty">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="PartnerFunction"/>
+        <viewAttribute id="ShipToParty"/>
+        <viewAttribute id="ShipToPartyName"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_Customer_Name">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PartnerFunction" source="PartnerFunction"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ShipToParty" source="Customer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ShipToPartyName" source="NAME1"/>
+      </input>
+      <filter>(&quot;PartnerFunction&quot; ='WE')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_Ship_To_Party" cardinality="C1_1" joinType="leftOuter">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="SoldToParty"/>
+        <viewAttribute id="SoldToPartyName"/>
+        <viewAttribute id="ShipToParty"/>
+        <viewAttribute id="ShipToPartyName"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_Sold_To_Party">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToParty" source="SoldToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToPartyName" source="SoldToPartyName"/>
+      </input>
+      <input node="#Proj_ShipToParty">
+        <mapping xsi:type="Calculation:AttributeMapping" target="ShipToParty" source="ShipToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ShipToPartyName" source="ShipToPartyName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+      </input>
+      <joinAttribute name="SAPClient"/>
+      <joinAttribute name="SalesDocument"/>
+      <joinAttribute name="SalesDocumentItem"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Proj_BillToParty">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="PartnerFunction"/>
+        <viewAttribute id="BillToParty"/>
+        <viewAttribute id="BillToPartyName"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_Customer_Name">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PartnerFunction" source="PartnerFunction"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillToParty" source="Customer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillToPartyName" source="NAME1"/>
+      </input>
+      <filter>(&quot;PartnerFunction&quot; ='RE')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_Bill_To_Party" cardinality="C1_1" joinType="leftOuter">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="SoldToParty"/>
+        <viewAttribute id="SoldToPartyName"/>
+        <viewAttribute id="ShipToParty"/>
+        <viewAttribute id="ShipToPartyName"/>
+        <viewAttribute id="BillToParty"/>
+        <viewAttribute id="BillToPartyName"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_Ship_To_Party">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToParty" source="SoldToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToPartyName" source="SoldToPartyName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ShipToParty" source="ShipToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ShipToPartyName" source="ShipToPartyName"/>
+      </input>
+      <input node="#Proj_BillToParty">
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillToParty" source="BillToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillToPartyName" source="BillToPartyName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+      </input>
+      <joinAttribute name="SAPClient"/>
+      <joinAttribute name="SalesDocument"/>
+      <joinAttribute name="SalesDocumentItem"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Proj_PayerParty">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="PartnerFunction"/>
+        <viewAttribute id="PayerParty"/>
+        <viewAttribute id="PayerPartyName"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_Customer_Name">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PartnerFunction" source="PartnerFunction"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PayerParty" source="Customer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PayerPartyName" source="NAME1"/>
+      </input>
+      <filter>(&quot;PartnerFunction&quot; ='RG')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_Payer_Party" cardinality="C1_1" joinType="leftOuter">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="SoldToParty"/>
+        <viewAttribute id="SoldToPartyName"/>
+        <viewAttribute id="ShipToParty"/>
+        <viewAttribute id="ShipToPartyName"/>
+        <viewAttribute id="BillToParty"/>
+        <viewAttribute id="BillToPartyName"/>
+        <viewAttribute id="PayerParty"/>
+        <viewAttribute id="PayerPartyName"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_Bill_To_Party">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToParty" source="SoldToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToPartyName" source="SoldToPartyName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ShipToParty" source="ShipToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ShipToPartyName" source="ShipToPartyName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillToParty" source="BillToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillToPartyName" source="BillToPartyName"/>
+      </input>
+      <input node="#Proj_PayerParty">
+        <mapping xsi:type="Calculation:AttributeMapping" target="PayerParty" source="PayerParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PayerPartyName" source="PayerPartyName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+      </input>
+      <joinAttribute name="SAPClient"/>
+      <joinAttribute name="SalesDocument"/>
+      <joinAttribute name="SalesDocumentItem"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Proj_2Employee">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="PartnerFunction"/>
+        <viewAttribute id="Personnel"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Proj_2Employee$$$$VBPA_ITM$$">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PartnerFunction" source="PartnerFunction"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Personnel" source="Personnel"/>
+      </input>
+      <filter>(in (&quot;PartnerFunction&quot;,'VE','ZM'))</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Proj_Employee_Name">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="Personnel"/>
+        <viewAttribute id="ENDDA"/>
+        <viewAttribute id="EmployeeName"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#PA0001">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Personnel" source="PERNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ENDDA" source="ENDDA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EmployeeName" source="ENAME"/>
+      </input>
+      <filter>(&quot;ENDDA&quot; ='99991231')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_Employee_Name" cardinality="CN_1" joinType="leftOuter">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="PartnerFunction"/>
+        <viewAttribute id="Personnel"/>
+        <viewAttribute id="EmployeeName"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Proj_2Employee">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PartnerFunction" source="PartnerFunction"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Personnel" source="Personnel"/>
+      </input>
+      <input node="#Proj_Employee_Name">
+        <mapping xsi:type="Calculation:AttributeMapping" target="EmployeeName" source="EmployeeName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Personnel" source="Personnel"/>
+      </input>
+      <joinAttribute name="SAPClient"/>
+      <joinAttribute name="Personnel"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Proj_Sales_Employee">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="PartnerFunction"/>
+        <viewAttribute id="SalesEmployee"/>
+        <viewAttribute id="SalesEmployeeName"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_Employee_Name">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PartnerFunction" source="PartnerFunction"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesEmployee" source="Personnel"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesEmployeeName" source="EmployeeName"/>
+      </input>
+      <filter>(&quot;PartnerFunction&quot; ='VE')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_Sales_Employee" cardinality="C1_1" joinType="leftOuter">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="SoldToParty"/>
+        <viewAttribute id="SoldToPartyName"/>
+        <viewAttribute id="ShipToParty"/>
+        <viewAttribute id="ShipToPartyName"/>
+        <viewAttribute id="BillToParty"/>
+        <viewAttribute id="BillToPartyName"/>
+        <viewAttribute id="PayerParty"/>
+        <viewAttribute id="PayerPartyName"/>
+        <viewAttribute id="SalesEmployee"/>
+        <viewAttribute id="SalesEmployeeName"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_Payer_Party">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToParty" source="SoldToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToPartyName" source="SoldToPartyName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ShipToParty" source="ShipToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ShipToPartyName" source="ShipToPartyName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillToParty" source="BillToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillToPartyName" source="BillToPartyName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PayerParty" source="PayerParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PayerPartyName" source="PayerPartyName"/>
+      </input>
+      <input node="#Proj_Sales_Employee">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesEmployee" source="SalesEmployee"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesEmployeeName" source="SalesEmployeeName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+      </input>
+      <joinAttribute name="SAPClient"/>
+      <joinAttribute name="SalesDocument"/>
+      <joinAttribute name="SalesDocumentItem"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Proj_Responsible_Employee">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="PartnerFunction"/>
+        <viewAttribute id="ResponsibleEmployee"/>
+        <viewAttribute id="ResponsibleEmployeeName"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_Employee_Name">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PartnerFunction" source="PartnerFunction"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ResponsibleEmployee" source="Personnel"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ResponsibleEmployeeName" source="EmployeeName"/>
+      </input>
+      <filter>(&quot;PartnerFunction&quot; ='ZM')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_Responsible_Employee" cardinality="C1_1" joinType="leftOuter">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="SalesDocumentItem"/>
+        <viewAttribute id="SoldToParty"/>
+        <viewAttribute id="SoldToPartyName"/>
+        <viewAttribute id="ShipToParty"/>
+        <viewAttribute id="ShipToPartyName"/>
+        <viewAttribute id="BillToParty"/>
+        <viewAttribute id="BillToPartyName"/>
+        <viewAttribute id="PayerParty"/>
+        <viewAttribute id="PayerPartyName"/>
+        <viewAttribute id="SalesEmployee"/>
+        <viewAttribute id="SalesEmployeeName"/>
+        <viewAttribute id="ResponsibleEmployee"/>
+        <viewAttribute id="ResponsibleEmployeeName"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_Sales_Employee">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToParty" source="SoldToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToPartyName" source="SoldToPartyName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ShipToParty" source="ShipToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ShipToPartyName" source="ShipToPartyName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillToParty" source="BillToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillToPartyName" source="BillToPartyName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PayerParty" source="PayerParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PayerPartyName" source="PayerPartyName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesEmployee" source="SalesEmployee"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesEmployeeName" source="SalesEmployeeName"/>
+      </input>
+      <input node="#Proj_Responsible_Employee">
+        <mapping xsi:type="Calculation:AttributeMapping" target="ResponsibleEmployee" source="ResponsibleEmployee"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ResponsibleEmployeeName" source="ResponsibleEmployeeName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SalesDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocumentItem" source="SalesDocumentItem"/>
+      </input>
+      <joinAttribute name="SAPClient"/>
+      <joinAttribute name="SalesDocument"/>
+      <joinAttribute name="SalesDocumentItem"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_Responsible_Employee">
+    <attributes>
+      <attribute id="SAPClient">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="SAPClient"/>
+      </attribute>
+      <attribute id="SalesDocument">
+        <descriptions defaultDescription="Sales Document"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="SalesDocument"/>
+      </attribute>
+      <attribute id="SalesDocumentItem">
+        <descriptions defaultDescription="Sales Document Item"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="SalesDocumentItem"/>
+      </attribute>
+      <attribute id="SoldToParty">
+        <descriptions defaultDescription="Sold To Party"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="SoldToParty"/>
+      </attribute>
+      <attribute id="SoldToPartyName">
+        <descriptions defaultDescription="Sold To Party Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="SoldToPartyName"/>
+      </attribute>
+      <attribute id="ShipToParty">
+        <descriptions defaultDescription="Ship To Party"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="ShipToParty"/>
+      </attribute>
+      <attribute id="ShipToPartyName">
+        <descriptions defaultDescription="Ship To Party Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="ShipToPartyName"/>
+      </attribute>
+      <attribute id="BillToParty">
+        <descriptions defaultDescription="Bill To Party"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="BillToParty"/>
+      </attribute>
+      <attribute id="BillToPartyName">
+        <descriptions defaultDescription="Bill To Party Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="BillToPartyName"/>
+      </attribute>
+      <attribute id="PayerParty">
+        <descriptions defaultDescription="Payer Party"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="PayerParty"/>
+      </attribute>
+      <attribute id="PayerPartyName">
+        <descriptions defaultDescription="Payer Party Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="PayerPartyName"/>
+      </attribute>
+      <attribute id="SalesEmployee">
+        <descriptions defaultDescription="Sales Employee"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="SalesEmployee"/>
+      </attribute>
+      <attribute id="SalesEmployeeName">
+        <descriptions defaultDescription="Sales Employee Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="SalesEmployeeName"/>
+      </attribute>
+      <attribute id="ResponsibleEmployee">
+        <descriptions defaultDescription="Responsible Employee"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="ResponsibleEmployee"/>
+      </attribute>
+      <attribute id="ResponsibleEmployeeName">
+        <descriptions defaultDescription="Responsible Employee Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_Responsible_Employee" columnName="ResponsibleEmployeeName"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="176" y="87"/>
+      </shape>
+      <shape modelObjectName="VBPA_ITM" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="150" y="604"/>
+      </shape>
+      <shape modelObjectName="Projection_VBPA_ITM_Key" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="585" y="833"/>
+      </shape>
+      <shape modelObjectName="Aggr_All" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="585" y="754"/>
+      </shape>
+      <shape modelObjectName="Proj_4Partners" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="399" y="931"/>
+      </shape>
+      <shape modelObjectName="ADRC" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="240" y="544"/>
+      </shape>
+      <shape modelObjectName="Proj_ADRC" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="245" y="931"/>
+      </shape>
+      <shape modelObjectName="Join_Customer_Name" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="322" y="833"/>
+      </shape>
+      <shape modelObjectName="Proj_SoldToParty" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="431" y="754"/>
+      </shape>
+      <shape modelObjectName="Join_Sold_To_Party" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="564" y="656"/>
+      </shape>
+      <shape modelObjectName="Proj_ShipToParty" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="410" y="656"/>
+      </shape>
+      <shape modelObjectName="Join_Ship_To_Party" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="508" y="558"/>
+      </shape>
+      <shape modelObjectName="Proj_BillToParty" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="354" y="558"/>
+      </shape>
+      <shape modelObjectName="Join_Bill_To_Party" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="420" y="460"/>
+      </shape>
+      <shape modelObjectName="Proj_PayerParty" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="266" y="460"/>
+      </shape>
+      <shape modelObjectName="Join_Payer_Party" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="341" y="362"/>
+      </shape>
+      <shape modelObjectName="Proj_2Employee" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="558"/>
+      </shape>
+      <shape modelObjectName="PA0001" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="480" y="544"/>
+      </shape>
+      <shape modelObjectName="Join_Employee_Name" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="460"/>
+      </shape>
+      <shape modelObjectName="Proj_Employee_Name" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="558"/>
+      </shape>
+      <shape modelObjectName="Proj_Sales_Employee" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="187" y="362"/>
+      </shape>
+      <shape modelObjectName="Join_Sales_Employee" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="253" y="264"/>
+      </shape>
+      <shape modelObjectName="Proj_Responsible_Employee" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="264"/>
+      </shape>
+      <shape modelObjectName="Join_Responsible_Employee" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="166"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

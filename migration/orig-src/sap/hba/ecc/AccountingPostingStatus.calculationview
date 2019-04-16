@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="AccountingPostingStatus" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hidden="true" visibility="internal" calculationScenarioType="TREE_BASED" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Projection" runWithInvokerPrivileges="false">
+  <origin/>
+  <descriptions defaultDescription="Master data for posting status for accounting"/>
+  <metadata changedAt="2013-06-18 09:21:10.345" createdAt="2012-09-03 09:34:52.525"/>
+  <defaultSchema schemaName="SAP_ECC"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="DD07L" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="SAP_ECC" columnObjectName="DD07L"/>
+    </DataSource>
+    <DataSource id="SAPClient" type="CALCULATION_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/sap.hba.ecc/calculationviews/SAPClient</resourceUri>
+    </DataSource>
+    <DataSource id="TVBST" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="SAP_ECC" columnObjectName="TVBST"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+      <viewAttributes>
+        <viewAttribute id="DOMNAME">
+          <filter xsi:type="AccessControl:SingleValueFilter" including="true" value="STATV"/>
+        </viewAttribute>
+        <viewAttribute id="AS4LOCAL">
+          <filter xsi:type="AccessControl:SingleValueFilter" including="true" value="A"/>
+        </viewAttribute>
+        <viewAttribute id="DOMVALUE_L"/>
+      </viewAttributes>
+      <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="VARCHAR" id="DOMVALUE" length="1">
+          <formula>leftstr(&quot;DOMVALUE_L&quot;,1)</formula>
+        </calculatedViewAttribute>
+        <calculatedViewAttribute datatype="VARCHAR" id="CONS" length="1">
+          <formula>1</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="#DD07L">
+        <mapping xsi:type="Calculation:AttributeMapping" target="DOMNAME" source="DOMNAME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AS4LOCAL" source="AS4LOCAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DOMVALUE_L" source="DOMVALUE_L"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2_1">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+      </viewAttributes>
+      <calculatedViewAttributes>
+        <calculatedViewAttribute datatype="VARCHAR" id="CONS" length="1">
+          <formula>1</formula>
+        </calculatedViewAttribute>
+      </calculatedViewAttributes>
+      <input node="#SAPClient">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_N" joinType="inner">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="CONS"/>
+        <viewAttribute id="DOMVALUE"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="CONS" source="CONS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DOMVALUE" source="DOMVALUE"/>
+      </input>
+      <input node="#Projection_2_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CONS" source="CONS"/>
+      </input>
+      <joinAttribute name="CONS"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1_1">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="SPRAS"/>
+        <viewAttribute id="TBNAM"/>
+        <viewAttribute id="FDNAM"/>
+        <viewAttribute id="STATU"/>
+        <viewAttribute id="BEZEI"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#TVBST">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TBNAM" source="TBNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FDNAM" source="FDNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STATU" source="STATU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEZEI" source="BEZEI"/>
+      </input>
+      <filter>(&quot;TBNAM&quot; ='VBUK') AND (&quot;FDNAM&quot; ='BUCHK')</filter>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="textTable" languageColumn="SPRAS">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="DOMVALUE"/>
+        <viewAttribute id="BEZEI"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Join_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DOMVALUE" source="DOMVALUE"/>
+      </input>
+      <input node="#Projection_1_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEZEI" source="BEZEI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DOMVALUE" source="STATU"/>
+      </input>
+      <joinAttribute name="SAPClient"/>
+      <joinAttribute name="DOMVALUE"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_2">
+    <attributes>
+      <attribute id="SAPClient">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_2" columnName="SAPClient"/>
+      </attribute>
+      <attribute id="AccountingPostingStatus">
+        <descriptions defaultDescription="Accounting Posting Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_2" columnName="DOMVALUE"/>
+      </attribute>
+      <attribute id="AccountingPostingStatusDesc">
+        <descriptions defaultDescription="Accounting Posting Status Desc"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_2" columnName="BEZEI"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="99" y="87"/>
+      </shape>
+      <shape modelObjectName="DD07L" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="20" y="332"/>
+      </shape>
+      <shape modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="264"/>
+      </shape>
+      <shape modelObjectName="TVBST" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="220" y="332"/>
+      </shape>
+      <shape modelObjectName="Projection_1_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="264"/>
+      </shape>
+      <shape modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="253" y="362"/>
+      </shape>
+      <shape modelObjectName="SAPClient" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="120" y="332"/>
+      </shape>
+      <shape modelObjectName="Projection_2_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="362"/>
+      </shape>
+      <shape modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="166"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

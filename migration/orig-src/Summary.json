@@ -1,0 +1,140 @@
+[
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\AccountingPostingStatus.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\AccountingPostingStatus.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\AccountingTransferStatus.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\AccountingTransferStatus.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\BillingDocumentCategory.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\BillingDocumentCategory.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\BillingDocumentHeader.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\BillingDocumentHeader.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\BillingDocumentItem.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\BillingDocumentItem.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\BillingDocumentType.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\BillingDocumentType.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\CustomerBasicData.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\CustomerBasicData.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\CustomerGroup.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\CustomerGroup.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\DistributionChannel.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\DistributionChannel.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\KNA1_COM.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\KNA1_COM.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\ProductHierarchyNode.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\ProductHierarchyNode.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\SAPClient.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\SAPClient.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\SDDocHeaderBusinessPartner.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\SDDocHeaderBusinessPartner.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\SDDocItemBusinessPartner.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\SDDocItemBusinessPartner.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\SDDocumentCategory.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\SDDocumentCategory.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\SalesDistrict.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\SalesDistrict.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\SalesOrganization.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\SalesOrganization.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\UnitOfMeasureName.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\UnitOfMeasureName.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\VBPA_HDR.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\VBPA_HDR.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\VBPA_ITM.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\VBPA_ITM.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\VBRK_COM.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\VBRK_COM.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\VBRP_COM.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\VBRP_COM.calculationview"
+  },
+  {
+    "targetFiles": [
+      ".\\sap\\hba\\ecc\\VBUK_COM.calculationview"
+    ],
+    "sourceFile": ".\\sap\\hba\\ecc\\VBUK_COM.calculationview"
+  }
+]

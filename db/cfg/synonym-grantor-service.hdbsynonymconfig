@@ -1,0 +1,158 @@
+{
+    "sap.hba.ecc::DD07L": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "DD07L"
+        }
+    },
+    "sap.hba.ecc::TVBST": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "TVBST"
+        }
+    },
+    "sap.hba.ecc::DD07T": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "DD07T"
+        }
+    },
+    "sap.hba.ecc::TVFK": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "TVFK"
+        }
+    },
+    "sap.hba.ecc::TVFKT": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "TVFKT"
+        }
+    },
+    "sap.hba.ecc::T151": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "T151"
+        }
+    },
+    "sap.hba.ecc::T151T": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "T151T"
+        }
+    },
+    "sap.hba.ecc::TVTW": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "TVTW"
+        }
+    },
+    "sap.hba.ecc::TVTWT": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "TVTWT"
+        }
+    },
+    "sap.hba.ecc::ADRC": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "ADRC"
+        }
+    },
+    "sap.hba.ecc::TSAD3T": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "TSAD3T"
+        }
+    },
+    "sap.hba.ecc::KNA1": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "KNA1"
+        }
+    },
+    "sap.hba.ecc::T179": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "T179"
+        }
+    },
+    "sap.hba.ecc::T179T": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "T179T"
+        }
+    },
+    "sap.hba.ecc::T000": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "T000"
+        }
+    },
+    "sap.hba.ecc::PA0001": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "PA0001"
+        }
+    },
+    "sap.hba.ecc::T171": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "T171"
+        }
+    },
+    "sap.hba.ecc::T171T": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "T171T"
+        }
+    },
+    "sap.hba.ecc::TVKO": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "TVKO"
+        }
+    },
+    "sap.hba.ecc::T001": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "T001"
+        }
+    },
+    "sap.hba.ecc::TVKOT": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "TVKOT"
+        }
+    },
+    "sap.hba.ecc::T006A": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "T006A"
+        }
+    },
+    "sap.hba.ecc::VBPA": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "VBPA"
+        }
+    },
+    "sap.hba.ecc::VBRK": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "VBRK"
+        }
+    },
+    "sap.hba.ecc::VBRP": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "VBRP"
+        }
+    },
+    "sap.hba.ecc::VBUK": {
+        "target": {
+            "schema": "ECC_SIDECAR",
+            "object": "VBUK"
+        }
+    }
+}

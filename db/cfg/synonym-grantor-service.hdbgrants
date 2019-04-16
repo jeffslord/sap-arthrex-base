@@ -1,0 +1,376 @@
+{
+    "arthrex-synonym-grantor-service": {
+        "object_owner": {
+            "object_privileges": [
+                {
+                    "name": "DD07L",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "TVBST",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "DD07T",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "TVFK",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "TVFKT",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "T151",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "T151T",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "TVTW",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "TVTWT",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "ADRC",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "TSAD3T",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "KNA1",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "T179",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "T179T",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "T000",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "PA0001",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "T171",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "T171T",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "TVKO",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "T001",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "TVKOT",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "T006A",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "VBPA",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "VBRK",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "VBRP",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                },
+                {
+                    "name": "VBUK",
+                    "schema": "ECC_SIDECAR",
+                    "privileges_with_grant_option": [
+                        "SELECT"
+                    ]
+                }
+            ]
+        },
+        "application_user": {
+            "object_privileges": [
+                {
+                    "name": "DD07L",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "TVBST",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "DD07T",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "TVFK",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "TVFKT",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "T151",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "T151T",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "TVTW",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "TVTWT",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "ADRC",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "TSAD3T",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "KNA1",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "T179",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "T179T",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "T000",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "PA0001",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "T171",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "T171T",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "TVKO",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "T001",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "TVKOT",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "T006A",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "VBPA",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "VBRK",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "VBRP",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                },
+                {
+                    "name": "VBUK",
+                    "privileges": [
+                        "SELECT"
+                    ],
+                    "schema": "ECC_SIDECAR"
+                }
+            ]
+        }
+    }
+}

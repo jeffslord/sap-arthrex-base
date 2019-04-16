@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="CustomerGroup" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hidden="true" visibility="internal" calculationScenarioType="TREE_BASED" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Projection" runWithInvokerPrivileges="false">
+  <origin/>
+  <descriptions defaultDescription="Master data for customer group"/>
+  <metadata changedAt="2013-06-20 14:47:13.496" createdAt="2012-07-23 15:07:54.214"/>
+  <defaultSchema schemaName="SAP_ECC"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="T151" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="SAP_ECC" columnObjectName="T151"/>
+    </DataSource>
+    <DataSource id="T151T" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="SAP_ECC" columnObjectName="T151T"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="textTable" languageColumn="SPRAS">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="KDGRP"/>
+        <viewAttribute id="KTEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#T151">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      </input>
+      <input node="#T151T">
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTEXT" source="KTEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP" source="KDGRP"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="KDGRP"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_1">
+    <attributes>
+      <attribute id="SAPClient" key="true">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="MANDT"/>
+      </attribute>
+      <attribute id="CustomerGroup">
+        <descriptions defaultDescription="Customer Group"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="KDGRP"/>
+      </attribute>
+      <attribute id="CustomerGroupName">
+        <descriptions defaultDescription="Customer Group Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="KTEXT"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+      </shape>
+      <shape modelObjectName="T151" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="10" y="170"/>
+      </shape>
+      <shape modelObjectName="T151T" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="120" y="176"/>
+      </shape>
+      <shape modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="166"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

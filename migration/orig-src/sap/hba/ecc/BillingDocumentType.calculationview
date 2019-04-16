@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="BillingDocumentType" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hidden="true" visibility="internal" calculationScenarioType="TREE_BASED" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Projection" runWithInvokerPrivileges="false">
+  <origin/>
+  <descriptions defaultDescription="Master data for billing document type"/>
+  <metadata changedAt="2013-06-18 10:52:22.827" createdAt="2012-07-23 15:07:51.515"/>
+  <defaultSchema schemaName="SAP_ECC"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="TVFK" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="SAP_ECC" columnObjectName="TVFK"/>
+    </DataSource>
+    <DataSource id="TVFKT" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="SAP_ECC" columnObjectName="TVFKT"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="FKART"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#TVFK">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKART" source="FKART"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="textTable" languageColumn="SPRAS">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="FKART"/>
+        <viewAttribute id="VTEXT"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Projection_1">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKART" source="FKART"/>
+      </input>
+      <input node="#TVFKT">
+        <mapping xsi:type="Calculation:AttributeMapping" target="VTEXT" source="VTEXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKART" source="FKART"/>
+      </input>
+      <joinAttribute name="MANDT"/>
+      <joinAttribute name="FKART"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_2">
+    <attributes>
+      <attribute id="SAPClient">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_2" columnName="MANDT"/>
+      </attribute>
+      <attribute id="BillingDocumentType">
+        <descriptions defaultDescription="Billing Document Type"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_2" columnName="FKART"/>
+      </attribute>
+      <attribute id="BillingDocumentTypeName">
+        <descriptions defaultDescription="Billing Document Type Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_2" columnName="VTEXT"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+      </shape>
+      <shape modelObjectName="TVFK" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="40" y="254"/>
+      </shape>
+      <shape modelObjectName="TVFKT" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="195" y="184"/>
+      </shape>
+      <shape modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="264"/>
+      </shape>
+      <shape modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="166"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

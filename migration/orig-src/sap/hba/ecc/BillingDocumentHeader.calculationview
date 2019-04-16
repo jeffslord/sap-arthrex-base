@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="BillingDocumentHeader" applyPrivilegeType="NONE" checkAnalyticPrivileges="false" defaultClient="crossClient" defaultLanguage="$$language$$" hidden="false" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Aggregation" runWithInvokerPrivileges="false">
+  <origin/>
+  <descriptions defaultDescription="Reuse view for billing document headers"/>
+  <metadata changedAt="2013-06-18 10:48:31.418" createdAt="2012-08-28 12:56:45.442"/>
+  <defaultSchema schemaName="SAP_ECC"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="VBUK_COM" type="CALCULATION_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/sap.hba.ecc/calculationviews/VBUK_COM</resourceUri>
+    </DataSource>
+    <DataSource id="VBRK_COM" type="CALCULATION_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/sap.hba.ecc/calculationviews/VBRK_COM</resourceUri>
+    </DataSource>
+    <DataSource id="SalesOrganization" type="CALCULATION_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/sap.hba.ecc/calculationviews/SalesOrganization</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Proj_VBUK">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesDocument"/>
+        <viewAttribute id="OverallProcessStatus"/>
+        <viewAttribute id="InvoiceListStatus"/>
+        <viewAttribute id="AccountingPostingStatus"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#VBUK_COM">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDocument" source="SDDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OverallProcessStatus" source="OverallSDProcessStatus"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="InvoiceListStatus" source="InvoiceListStatus"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AccountingPostingStatus" source="AccountingPostingStatus"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Proj_VBRK">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="BillingDocument"/>
+        <viewAttribute id="BillingType"/>
+        <viewAttribute id="BillingDate"/>
+        <viewAttribute id="BillingCategory"/>
+        <viewAttribute id="SalesOrganization"/>
+        <viewAttribute id="DistributionChannel"/>
+        <viewAttribute id="Division"/>
+        <viewAttribute id="CreationUserAccount"/>
+        <viewAttribute id="CreationDate"/>
+        <viewAttribute id="CreationTime"/>
+        <viewAttribute id="LastChangeDate"/>
+        <viewAttribute id="CompanyCode"/>
+        <viewAttribute id="DocumentReferenceID"/>
+        <viewAttribute id="AssignmentNumber"/>
+        <viewAttribute id="SalesDistrict"/>
+        <viewAttribute id="CustomerGroup"/>
+        <viewAttribute id="SDPricingProcedure"/>
+        <viewAttribute id="FiscalYear"/>
+        <viewAttribute id="FiscalPeriod"/>
+        <viewAttribute id="CustomerPriceGroup"/>
+        <viewAttribute id="PriceListType"/>
+        <viewAttribute id="IncotermsClassification"/>
+        <viewAttribute id="IncotermsTransferLocationName"/>
+        <viewAttribute id="AdditionalValueDays"/>
+        <viewAttribute id="FixedValueDate"/>
+        <viewAttribute id="CustomerAccountAssignmentGroup"/>
+        <viewAttribute id="DestinationCountry"/>
+        <viewAttribute id="Region"/>
+        <viewAttribute id="CityCode"/>
+        <viewAttribute id="CustomerTaxClassification1"/>
+        <viewAttribute id="CustomerTaxClassification2"/>
+        <viewAttribute id="CustomerTaxClassification3"/>
+        <viewAttribute id="CustomerTaxClassification4"/>
+        <viewAttribute id="CustomerTaxClassification5"/>
+        <viewAttribute id="CustomerTaxClassification6"/>
+        <viewAttribute id="CustomerTaxClassification7"/>
+        <viewAttribute id="CustomerTaxClassification8"/>
+        <viewAttribute id="CustomerTaxClassification9"/>
+        <viewAttribute id="VATRegistration"/>
+        <viewAttribute id="RebateAgreement"/>
+        <viewAttribute id="PostingStatus"/>
+        <viewAttribute id="PaymentTerms"/>
+        <viewAttribute id="PaymentMethod"/>
+        <viewAttribute id="TranslationDate"/>
+        <viewAttribute id="PaymentReference"/>
+        <viewAttribute id="TaxDepartureCountry"/>
+        <viewAttribute id="OriginSalesTaxNumber"/>
+        <viewAttribute id="CountrySalesTaxNumber"/>
+        <viewAttribute id="CustomerPurchaseOrder"/>
+        <viewAttribute id="AccountingExchangeRate"/>
+        <viewAttribute id="ExchangeRateType"/>
+        <viewAttribute id="TransactionCurrency"/>
+        <viewAttribute id="CancelledIndicator"/>
+        <viewAttribute id="TotalNetAmount"/>
+        <viewAttribute id="TaxAmount"/>
+        <viewAttribute id="SoldToParty"/>
+        <viewAttribute id="PayerParty"/>
+        <viewAttribute id="SDDocumentCategory"/>
+        <viewAttribute id="County"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#VBRK_COM">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingDocument" source="BillingDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingType" source="BillingDocumentType"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingDate" source="BillingDocumentDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingCategory" source="BillingDocumentCategory"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganization" source="SalesOrganization"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DistributionChannel" source="DistributionChannel"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Division" source="Division"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CreationUserAccount" source="CreatedByUser"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CreationDate" source="CreationDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CreationTime" source="CreationTime"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LastChangeDate" source="LastChangeDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CompanyCode" source="CompanyCode"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DocumentReferenceID" source="DocumentReferenceID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AssignmentNumber" source="AssignmentReference"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDistrict" source="SalesDistrict"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup" source="CustomerGroup"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SDPricingProcedure" source="SDPricingProcedure"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FiscalYear" source="FiscalYear"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FiscalPeriod" source="FiscalPeriod"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPriceGroup" source="CustomerPriceGroup"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PriceListType" source="PriceListType"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IncotermsClassification" source="IncotermsClassification"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IncotermsTransferLocationName" source="IncotermsTransferLocation"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AdditionalValueDays" source="AdditionalValueDays"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FixedValueDate" source="FixedValueDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerAccountAssignmentGroup" source="CustomerAccountAssignmentGroup"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DestinationCountry" source="Country"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CityCode" source="CityCode"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification1" source="CustomerTaxClassification1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification2" source="CustomerTaxClassification2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification3" source="CustomerTaxClassification3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification4" source="CustomerTaxClassification4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification5" source="CustomerTaxClassification5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification6" source="CustomerTaxClassification6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification7" source="CustomerTaxClassification7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification8" source="CustomerTaxClassification8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification9" source="CustomerTaxClassification9"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VATRegistration" source="VATRegistration"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RebateAgreement" source="CustomerRebateAgreement"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PostingStatus" source="AccountingTransferStatus"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PaymentTerms" source="CustomerPaymentTerms"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PaymentMethod" source="PaymentMethod"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TranslationDate" source="ExchangeRateDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PaymentReference" source="PaymentReference"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TaxDepartureCountry" source="TaxDepartureCountry"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OriginSalesTaxNumber" source="VATRegistrationOrigin"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CountrySalesTaxNumber" source="CountryOfVATRegistration"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPurchaseOrder" source="PurchaseOrderByCustomer"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AccountingExchangeRate" source="AccountingExchangeRate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ExchangeRateType" source="ExchangeRateType"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TransactionCurrency" source="TransactionCurrency"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CancelledIndicator" source="BillingDocumentIsCancelled"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TotalNetAmount" source="TotalNetAmount"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TaxAmount" source="TaxAmount"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToParty" source="SoldToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PayerParty" source="PayerParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SDDocumentCategory" source="SDDocumentCategory"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="County" source="County"/>
+      </input>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="J_VBRK" cardinality="C1_1" joinType="leftOuter">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="BillingDocument"/>
+        <viewAttribute id="BillingType"/>
+        <viewAttribute id="BillingDate"/>
+        <viewAttribute id="BillingCategory"/>
+        <viewAttribute id="SalesOrganization"/>
+        <viewAttribute id="DistributionChannel"/>
+        <viewAttribute id="Division"/>
+        <viewAttribute id="CreationUserAccount"/>
+        <viewAttribute id="CreationDate"/>
+        <viewAttribute id="CreationTime"/>
+        <viewAttribute id="LastChangeDate"/>
+        <viewAttribute id="CompanyCode"/>
+        <viewAttribute id="DocumentReferenceID"/>
+        <viewAttribute id="AssignmentNumber"/>
+        <viewAttribute id="SalesDistrict"/>
+        <viewAttribute id="CustomerGroup"/>
+        <viewAttribute id="SDPricingProcedure"/>
+        <viewAttribute id="FiscalYear"/>
+        <viewAttribute id="FiscalPeriod"/>
+        <viewAttribute id="CustomerPriceGroup"/>
+        <viewAttribute id="PriceListType"/>
+        <viewAttribute id="IncotermsClassification"/>
+        <viewAttribute id="IncotermsTransferLocationName"/>
+        <viewAttribute id="AdditionalValueDays"/>
+        <viewAttribute id="FixedValueDate"/>
+        <viewAttribute id="CustomerAccountAssignmentGroup"/>
+        <viewAttribute id="DestinationCountry"/>
+        <viewAttribute id="Region"/>
+        <viewAttribute id="CityCode"/>
+        <viewAttribute id="CustomerTaxClassification1"/>
+        <viewAttribute id="CustomerTaxClassification2"/>
+        <viewAttribute id="CustomerTaxClassification3"/>
+        <viewAttribute id="CustomerTaxClassification4"/>
+        <viewAttribute id="CustomerTaxClassification5"/>
+        <viewAttribute id="CustomerTaxClassification6"/>
+        <viewAttribute id="CustomerTaxClassification7"/>
+        <viewAttribute id="CustomerTaxClassification8"/>
+        <viewAttribute id="CustomerTaxClassification9"/>
+        <viewAttribute id="VATRegistration"/>
+        <viewAttribute id="RebateAgreement"/>
+        <viewAttribute id="PostingStatus"/>
+        <viewAttribute id="PaymentTerms"/>
+        <viewAttribute id="PaymentMethod"/>
+        <viewAttribute id="TranslationDate"/>
+        <viewAttribute id="PaymentReference"/>
+        <viewAttribute id="TaxDepartureCountry"/>
+        <viewAttribute id="OriginSalesTaxNumber"/>
+        <viewAttribute id="CountrySalesTaxNumber"/>
+        <viewAttribute id="CustomerPurchaseOrder"/>
+        <viewAttribute id="AccountingExchangeRate"/>
+        <viewAttribute id="ExchangeRateType"/>
+        <viewAttribute id="TransactionCurrency"/>
+        <viewAttribute id="CancelledIndicator"/>
+        <viewAttribute id="TotalNetAmount"/>
+        <viewAttribute id="TaxAmount"/>
+        <viewAttribute id="OverallProcessStatus"/>
+        <viewAttribute id="InvoiceListStatus"/>
+        <viewAttribute id="SoldToParty"/>
+        <viewAttribute id="PayerParty"/>
+        <viewAttribute id="AccountingPostingStatus"/>
+        <viewAttribute id="SDDocumentCategory"/>
+        <viewAttribute id="County"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#Proj_VBRK">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingDocument" source="BillingDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingType" source="BillingType"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingDate" source="BillingDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingCategory" source="BillingCategory"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganization" source="SalesOrganization"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DistributionChannel" source="DistributionChannel"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Division" source="Division"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CreationUserAccount" source="CreationUserAccount"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CreationDate" source="CreationDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CreationTime" source="CreationTime"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LastChangeDate" source="LastChangeDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CompanyCode" source="CompanyCode"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DocumentReferenceID" source="DocumentReferenceID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AssignmentNumber" source="AssignmentNumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDistrict" source="SalesDistrict"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup" source="CustomerGroup"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SDPricingProcedure" source="SDPricingProcedure"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FiscalYear" source="FiscalYear"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FiscalPeriod" source="FiscalPeriod"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPriceGroup" source="CustomerPriceGroup"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PriceListType" source="PriceListType"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IncotermsClassification" source="IncotermsClassification"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IncotermsTransferLocationName" source="IncotermsTransferLocationName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AdditionalValueDays" source="AdditionalValueDays"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FixedValueDate" source="FixedValueDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerAccountAssignmentGroup" source="CustomerAccountAssignmentGroup"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DestinationCountry" source="DestinationCountry"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CityCode" source="CityCode"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification1" source="CustomerTaxClassification1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification2" source="CustomerTaxClassification2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification3" source="CustomerTaxClassification3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification4" source="CustomerTaxClassification4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification5" source="CustomerTaxClassification5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification6" source="CustomerTaxClassification6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification7" source="CustomerTaxClassification7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification8" source="CustomerTaxClassification8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification9" source="CustomerTaxClassification9"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VATRegistration" source="VATRegistration"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RebateAgreement" source="RebateAgreement"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PostingStatus" source="PostingStatus"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PaymentTerms" source="PaymentTerms"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PaymentMethod" source="PaymentMethod"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TranslationDate" source="TranslationDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PaymentReference" source="PaymentReference"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TaxDepartureCountry" source="TaxDepartureCountry"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OriginSalesTaxNumber" source="OriginSalesTaxNumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CountrySalesTaxNumber" source="CountrySalesTaxNumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPurchaseOrder" source="CustomerPurchaseOrder"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AccountingExchangeRate" source="AccountingExchangeRate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ExchangeRateType" source="ExchangeRateType"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TransactionCurrency" source="TransactionCurrency"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CancelledIndicator" source="CancelledIndicator"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TotalNetAmount" source="TotalNetAmount"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TaxAmount" source="TaxAmount"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToParty" source="SoldToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PayerParty" source="PayerParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SDDocumentCategory" source="SDDocumentCategory"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="County" source="County"/>
+      </input>
+      <input node="#Proj_VBUK">
+        <mapping xsi:type="Calculation:AttributeMapping" target="OverallProcessStatus" source="OverallProcessStatus"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="InvoiceListStatus" source="InvoiceListStatus"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AccountingPostingStatus" source="AccountingPostingStatus"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingDocument" source="SalesDocument"/>
+      </input>
+      <joinAttribute name="SAPClient"/>
+      <joinAttribute name="BillingDocument"/>
+    </calculationView>
+    <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="leftOuter">
+      <viewAttributes>
+        <viewAttribute id="SAPClient"/>
+        <viewAttribute id="SalesOrganization"/>
+        <viewAttribute id="BillingDocument"/>
+        <viewAttribute id="BillingType"/>
+        <viewAttribute id="BillingDate"/>
+        <viewAttribute id="BillingCategory"/>
+        <viewAttribute id="DistributionChannel"/>
+        <viewAttribute id="Division"/>
+        <viewAttribute id="CreationUserAccount"/>
+        <viewAttribute id="CreationDate"/>
+        <viewAttribute id="CreationTime"/>
+        <viewAttribute id="LastChangeDate"/>
+        <viewAttribute id="CompanyCode"/>
+        <viewAttribute id="DocumentReferenceID"/>
+        <viewAttribute id="AssignmentNumber"/>
+        <viewAttribute id="SalesDistrict"/>
+        <viewAttribute id="CustomerGroup"/>
+        <viewAttribute id="SDPricingProcedure"/>
+        <viewAttribute id="FiscalYear"/>
+        <viewAttribute id="FiscalPeriod"/>
+        <viewAttribute id="CustomerPriceGroup"/>
+        <viewAttribute id="PriceListType"/>
+        <viewAttribute id="IncotermsClassification"/>
+        <viewAttribute id="IncotermsTransferLocationName"/>
+        <viewAttribute id="AdditionalValueDays"/>
+        <viewAttribute id="FixedValueDate"/>
+        <viewAttribute id="CustomerAccountAssignmentGroup"/>
+        <viewAttribute id="DestinationCountry"/>
+        <viewAttribute id="Region"/>
+        <viewAttribute id="CityCode"/>
+        <viewAttribute id="CustomerTaxClassification1"/>
+        <viewAttribute id="CustomerTaxClassification2"/>
+        <viewAttribute id="CustomerTaxClassification3"/>
+        <viewAttribute id="CustomerTaxClassification4"/>
+        <viewAttribute id="CustomerTaxClassification5"/>
+        <viewAttribute id="CustomerTaxClassification6"/>
+        <viewAttribute id="CustomerTaxClassification7"/>
+        <viewAttribute id="CustomerTaxClassification8"/>
+        <viewAttribute id="CustomerTaxClassification9"/>
+        <viewAttribute id="VATRegistration"/>
+        <viewAttribute id="RebateAgreement"/>
+        <viewAttribute id="PostingStatus"/>
+        <viewAttribute id="PaymentTerms"/>
+        <viewAttribute id="PaymentMethod"/>
+        <viewAttribute id="TranslationDate"/>
+        <viewAttribute id="PaymentReference"/>
+        <viewAttribute id="TaxDepartureCountry"/>
+        <viewAttribute id="OriginSalesTaxNumber"/>
+        <viewAttribute id="CountrySalesTaxNumber"/>
+        <viewAttribute id="CustomerPurchaseOrder"/>
+        <viewAttribute id="AccountingExchangeRate"/>
+        <viewAttribute id="ExchangeRateType"/>
+        <viewAttribute id="TransactionCurrency"/>
+        <viewAttribute id="CancelledIndicator"/>
+        <viewAttribute id="TotalNetAmount"/>
+        <viewAttribute id="TaxAmount"/>
+        <viewAttribute id="OverallProcessStatus"/>
+        <viewAttribute id="InvoiceListStatus"/>
+        <viewAttribute id="SalesOrganizationName"/>
+        <viewAttribute id="CompanyCodeCurrency"/>
+        <viewAttribute id="FiscalYearVariant"/>
+        <viewAttribute id="SoldToParty"/>
+        <viewAttribute id="PayerParty"/>
+        <viewAttribute id="AccountingPostingStatus"/>
+        <viewAttribute id="SDDocumentCategory"/>
+        <viewAttribute id="SalesOrganizationCurrency"/>
+        <viewAttribute id="County"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#J_VBRK">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganization" source="SalesOrganization"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingDocument" source="BillingDocument"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingType" source="BillingType"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingDate" source="BillingDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BillingCategory" source="BillingCategory"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DistributionChannel" source="DistributionChannel"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Division" source="Division"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CreationUserAccount" source="CreationUserAccount"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CreationDate" source="CreationDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CreationTime" source="CreationTime"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LastChangeDate" source="LastChangeDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CompanyCode" source="CompanyCode"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DocumentReferenceID" source="DocumentReferenceID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AssignmentNumber" source="AssignmentNumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesDistrict" source="SalesDistrict"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerGroup" source="CustomerGroup"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SDPricingProcedure" source="SDPricingProcedure"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FiscalYear" source="FiscalYear"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FiscalPeriod" source="FiscalPeriod"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPriceGroup" source="CustomerPriceGroup"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PriceListType" source="PriceListType"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IncotermsClassification" source="IncotermsClassification"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IncotermsTransferLocationName" source="IncotermsTransferLocationName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AdditionalValueDays" source="AdditionalValueDays"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FixedValueDate" source="FixedValueDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerAccountAssignmentGroup" source="CustomerAccountAssignmentGroup"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DestinationCountry" source="DestinationCountry"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="Region" source="Region"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CityCode" source="CityCode"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification1" source="CustomerTaxClassification1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification2" source="CustomerTaxClassification2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification3" source="CustomerTaxClassification3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification4" source="CustomerTaxClassification4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification5" source="CustomerTaxClassification5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification6" source="CustomerTaxClassification6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification7" source="CustomerTaxClassification7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification8" source="CustomerTaxClassification8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerTaxClassification9" source="CustomerTaxClassification9"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VATRegistration" source="VATRegistration"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RebateAgreement" source="RebateAgreement"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PostingStatus" source="PostingStatus"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PaymentTerms" source="PaymentTerms"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PaymentMethod" source="PaymentMethod"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TranslationDate" source="TranslationDate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PaymentReference" source="PaymentReference"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TaxDepartureCountry" source="TaxDepartureCountry"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OriginSalesTaxNumber" source="OriginSalesTaxNumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CountrySalesTaxNumber" source="CountrySalesTaxNumber"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CustomerPurchaseOrder" source="CustomerPurchaseOrder"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AccountingExchangeRate" source="AccountingExchangeRate"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ExchangeRateType" source="ExchangeRateType"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TransactionCurrency" source="TransactionCurrency"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CancelledIndicator" source="CancelledIndicator"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TotalNetAmount" source="TotalNetAmount"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TaxAmount" source="TaxAmount"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="OverallProcessStatus" source="OverallProcessStatus"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="InvoiceListStatus" source="InvoiceListStatus"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SoldToParty" source="SoldToParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PayerParty" source="PayerParty"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AccountingPostingStatus" source="AccountingPostingStatus"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SDDocumentCategory" source="SDDocumentCategory"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="County" source="County"/>
+      </input>
+      <input node="#SalesOrganization">
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganizationName" source="SalesOrganizationName"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CompanyCodeCurrency" source="CompanyCodeCurrency"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FiscalYearVariant" source="FiscalYearVariant"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganizationCurrency" source="SalesOrganizationCurrency"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SAPClient" source="SAPClient"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SalesOrganization" source="SalesOrganization"/>
+      </input>
+      <joinAttribute name="SAPClient"/>
+      <joinAttribute name="SalesOrganization"/>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Join_1">
+    <attributes>
+      <attribute id="SAPClient">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="SAPClient"/>
+      </attribute>
+      <attribute id="BillingDocument">
+        <descriptions defaultDescription="Billing Document"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="BillingDocument"/>
+      </attribute>
+      <attribute id="SDDocumentCategory">
+        <descriptions defaultDescription="SD Document Category"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="SDDocumentCategory"/>
+      </attribute>
+      <attribute id="BillingDocumentType">
+        <descriptions defaultDescription="Billing Document Type"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="BillingType"/>
+      </attribute>
+      <attribute id="BillingDocumentDate">
+        <descriptions defaultDescription="Billing Document Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="BillingDate"/>
+      </attribute>
+      <attribute id="BillingDocumentCategory">
+        <descriptions defaultDescription="Billing Document Category"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="BillingCategory"/>
+      </attribute>
+      <attribute id="SalesOrganization">
+        <descriptions defaultDescription="Sales Organization"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="SalesOrganization"/>
+      </attribute>
+      <attribute id="SalesOrganizationName">
+        <descriptions defaultDescription="Sales Organization Name"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="SalesOrganizationName"/>
+      </attribute>
+      <attribute id="DistributionChannel">
+        <descriptions defaultDescription="Distribution Channel"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="DistributionChannel"/>
+      </attribute>
+      <attribute id="Division">
+        <descriptions defaultDescription="Division"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="Division"/>
+      </attribute>
+      <attribute id="CreatedByUser">
+        <descriptions defaultDescription="Created By User"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CreationUserAccount"/>
+      </attribute>
+      <attribute id="CreationDate">
+        <descriptions defaultDescription="Creation Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CreationDate"/>
+      </attribute>
+      <attribute id="CreationTime">
+        <descriptions defaultDescription="Creation Time"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CreationTime"/>
+      </attribute>
+      <attribute id="LastChangeDate">
+        <descriptions defaultDescription="Last Change Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="LastChangeDate"/>
+      </attribute>
+      <attribute id="CompanyCode">
+        <descriptions defaultDescription="Company Code"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CompanyCode"/>
+      </attribute>
+      <attribute id="DocumentReferenceID">
+        <descriptions defaultDescription="Document Reference ID"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="DocumentReferenceID"/>
+      </attribute>
+      <attribute id="AssignmentReference">
+        <descriptions defaultDescription="Assignment Reference"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="AssignmentNumber"/>
+      </attribute>
+      <attribute id="SalesDistrict">
+        <descriptions defaultDescription="Sales District"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="SalesDistrict"/>
+      </attribute>
+      <attribute id="CustomerGroup">
+        <descriptions defaultDescription="Customer Group"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CustomerGroup"/>
+      </attribute>
+      <attribute id="SDPricingProcedure">
+        <descriptions defaultDescription="SD Pricing Procedure"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="SDPricingProcedure"/>
+      </attribute>
+      <attribute id="FiscalYear">
+        <descriptions defaultDescription="Fiscal Year"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="FiscalYear"/>
+      </attribute>
+      <attribute id="FiscalPeriod">
+        <descriptions defaultDescription="Fiscal Period"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="FiscalPeriod"/>
+      </attribute>
+      <attribute id="CustomerPriceGroup">
+        <descriptions defaultDescription="Customer Price Group"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CustomerPriceGroup"/>
+      </attribute>
+      <attribute id="PriceListType">
+        <descriptions defaultDescription="Price List Type"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="PriceListType"/>
+      </attribute>
+      <attribute id="IncotermsClassification">
+        <descriptions defaultDescription="Incoterms Classification"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="IncotermsClassification"/>
+      </attribute>
+      <attribute id="IncotermsTransferLocation">
+        <descriptions defaultDescription="Incoterms Transfer Location"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="IncotermsTransferLocationName"/>
+      </attribute>
+      <attribute id="AdditionalValueDays">
+        <descriptions defaultDescription="Additional Value Days"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="AdditionalValueDays"/>
+      </attribute>
+      <attribute id="FixedValueDate">
+        <descriptions defaultDescription="Fixed Value Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="FixedValueDate"/>
+      </attribute>
+      <attribute id="CustomerAccountAssignmentGroup">
+        <descriptions defaultDescription="Customer Account Assignment Group"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CustomerAccountAssignmentGroup"/>
+      </attribute>
+      <attribute id="Country">
+        <descriptions defaultDescription="Country"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="DestinationCountry"/>
+      </attribute>
+      <attribute id="Region">
+        <descriptions defaultDescription="Region"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="Region"/>
+      </attribute>
+      <attribute id="County">
+        <descriptions defaultDescription="County"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="County"/>
+      </attribute>
+      <attribute id="CityCode">
+        <descriptions defaultDescription="City Code"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CityCode"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification1">
+        <descriptions defaultDescription="Customer Tax Classification 1"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CustomerTaxClassification1"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification2">
+        <descriptions defaultDescription="Customer Tax Classification 2"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CustomerTaxClassification2"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification3">
+        <descriptions defaultDescription="Customer Tax Classification 3"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CustomerTaxClassification3"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification4">
+        <descriptions defaultDescription="Customer Tax Classification 4"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CustomerTaxClassification4"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification5">
+        <descriptions defaultDescription="Customer Tax Classification 5"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CustomerTaxClassification5"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification6">
+        <descriptions defaultDescription="Customer Tax Classification 6"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CustomerTaxClassification6"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification7">
+        <descriptions defaultDescription="Customer Tax Classification 7"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CustomerTaxClassification7"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification8">
+        <descriptions defaultDescription="Customer Tax Classification 8"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CustomerTaxClassification8"/>
+      </attribute>
+      <attribute id="CustomerTaxClassification9">
+        <descriptions defaultDescription="Customer Tax Classification 9"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CustomerTaxClassification9"/>
+      </attribute>
+      <attribute id="VATRegistration">
+        <descriptions defaultDescription="VAT Registration"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="VATRegistration"/>
+      </attribute>
+      <attribute id="CustomerRebateAgreement">
+        <descriptions defaultDescription="Customer Rebate Agreement"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="RebateAgreement"/>
+      </attribute>
+      <attribute id="AccountingTransferStatus">
+        <descriptions defaultDescription="Accounting Transfer Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="PostingStatus"/>
+      </attribute>
+      <attribute id="CustomerPaymentTerms">
+        <descriptions defaultDescription="Customer Payment Terms"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="PaymentTerms"/>
+      </attribute>
+      <attribute id="PaymentMethod">
+        <descriptions defaultDescription="Payment Method"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="PaymentMethod"/>
+      </attribute>
+      <attribute id="ExchangeRateDate">
+        <descriptions defaultDescription="Exchange Rate Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="TranslationDate"/>
+      </attribute>
+      <attribute id="PaymentReference">
+        <descriptions defaultDescription="Payment Reference"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="PaymentReference"/>
+      </attribute>
+      <attribute id="TaxDepartureCountry">
+        <descriptions defaultDescription="Tax Departure Country"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="TaxDepartureCountry"/>
+      </attribute>
+      <attribute id="VATRegistrationOrigin">
+        <descriptions defaultDescription="VAT Registration Origin"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="OriginSalesTaxNumber"/>
+      </attribute>
+      <attribute id="CountryOfVATRegistration">
+        <descriptions defaultDescription="Country Of VAT Registration"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CountrySalesTaxNumber"/>
+      </attribute>
+      <attribute id="PurchaseOrderByCustomer">
+        <descriptions defaultDescription="Purchase Order By Customer"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CustomerPurchaseOrder"/>
+      </attribute>
+      <attribute id="AccountingExchangeRate">
+        <descriptions defaultDescription="Accounting Exchange Rate"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="AccountingExchangeRate"/>
+      </attribute>
+      <attribute id="ExchangeRateType">
+        <descriptions defaultDescription="Exchange Rate Type"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="ExchangeRateType"/>
+      </attribute>
+      <attribute id="StatisticsCurrency">
+        <descriptions defaultDescription="Statistics Currency"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="SalesOrganizationCurrency"/>
+      </attribute>
+      <attribute id="TransactionCurrency">
+        <descriptions defaultDescription="Transaction Currency"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="TransactionCurrency"/>
+      </attribute>
+      <attribute id="BillingDocumentIsCancelled">
+        <descriptions defaultDescription="Billing Document Is Cancelled"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CancelledIndicator"/>
+      </attribute>
+      <attribute id="CompanyCodeCurrency">
+        <descriptions defaultDescription="Company Code Currency"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="CompanyCodeCurrency"/>
+      </attribute>
+      <attribute id="FiscalYearVariant">
+        <descriptions defaultDescription="Fiscal Year Variant"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="FiscalYearVariant"/>
+      </attribute>
+      <attribute id="OverallSDProcessStatus">
+        <descriptions defaultDescription="Overall SD Process Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="OverallProcessStatus"/>
+      </attribute>
+      <attribute id="InvoiceListStatus">
+        <descriptions defaultDescription="Invoice List Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="InvoiceListStatus"/>
+      </attribute>
+      <attribute id="SoldToParty">
+        <descriptions defaultDescription="Sold To Party"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="SoldToParty"/>
+      </attribute>
+      <attribute id="PayerParty">
+        <descriptions defaultDescription="Payer Party"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="PayerParty"/>
+      </attribute>
+      <attribute id="AccountingPostingStatus">
+        <descriptions defaultDescription="Accounting Posting Status"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Join_1" columnName="AccountingPostingStatus"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="TotalNetAmount" aggregationType="sum" measureType="amount">
+        <descriptions defaultDescription="Total Net Amount"/>
+        <unitCurrencyAttribute attributeName="TransactionCurrency"/>
+        <measureMapping columnObjectName="Join_1" columnName="TotalNetAmount"/>
+      </measure>
+      <measure id="TaxAmount" aggregationType="sum" measureType="amount">
+        <descriptions defaultDescription="Tax Amount"/>
+        <unitCurrencyAttribute attributeName="TransactionCurrency"/>
+        <measureMapping columnObjectName="Join_1" columnName="TaxAmount"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures>
+      <measure id="BillingDocumentCount" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" datatype="INTEGER">
+        <descriptions defaultDescription="Billing Document Count"/>
+        <exceptionAggregation exceptionAggregationType="countDistinct">
+          <attribute attributeName="SAPClient"/>
+          <attribute attributeName="BillingDocument"/>
+        </exceptionAggregation>
+        <formula>1</formula>
+      </measure>
+    </calculatedMeasures>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="99" y="87"/>
+      </shape>
+      <shape modelObjectName="VBRK_COM" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="66" y="240"/>
+      </shape>
+      <shape modelObjectName="VBUK_COM" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="181" y="254"/>
+      </shape>
+      <shape modelObjectName="SalesOrganization" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="22" y="138"/>
+      </shape>
+      <shape modelObjectName="Proj_VBUK" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="176" y="362"/>
+      </shape>
+      <shape modelObjectName="Proj_VBRK" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="362"/>
+      </shape>
+      <shape modelObjectName="J_VBRK" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="264"/>
+      </shape>
+      <shape modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="99" y="166"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="sap.hba.ecc::VBRP_COM" applyPrivilegeType="NONE" defaultClient="" defaultLanguage="$$language$$" hidden="false" dataCategory="DEFAULT" enforceSqlExecution="true" executionSemantic="UNDEFINED" outputViewType="Aggregation" runWithInvokerPrivileges="false" xscCompatibilityMode="true">
+  <origin/>
+  <descriptions defaultDescription="Private view"/>
+  <metadata changedAt="2013-06-27 14:36:36.753" createdAt="2012-08-28 13:02:34.159"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="VBRP">
+      <resourceUri>sap.hba.ecc::VBRP</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <viewAttributes>
+        <viewAttribute id="MANDT"/>
+        <viewAttribute id="VBELN"/>
+        <viewAttribute id="POSNR"/>
+        <viewAttribute id="UEPOS"/>
+        <viewAttribute id="FKIMG"/>
+        <viewAttribute id="VRKME"/>
+        <viewAttribute id="UMVKZ"/>
+        <viewAttribute id="UMVKN"/>
+        <viewAttribute id="MEINS"/>
+        <viewAttribute id="SMENG"/>
+        <viewAttribute id="FKLMG"/>
+        <viewAttribute id="LMENG"/>
+        <viewAttribute id="NTGEW"/>
+        <viewAttribute id="BRGEW"/>
+        <viewAttribute id="GEWEI"/>
+        <viewAttribute id="VOLUM"/>
+        <viewAttribute id="VOLEH"/>
+        <viewAttribute id="GSBER"/>
+        <viewAttribute id="PRSDT"/>
+        <viewAttribute id="FBUDA"/>
+        <viewAttribute id="KURSK"/>
+        <viewAttribute id="NETWR"/>
+        <viewAttribute id="VBELV"/>
+        <viewAttribute id="POSNV"/>
+        <viewAttribute id="VGBEL"/>
+        <viewAttribute id="VGPOS"/>
+        <viewAttribute id="VGTYP"/>
+        <viewAttribute id="AUBEL"/>
+        <viewAttribute id="AUPOS"/>
+        <viewAttribute id="AUREF"/>
+        <viewAttribute id="MATNR"/>
+        <viewAttribute id="ARKTX"/>
+        <viewAttribute id="PMATN"/>
+        <viewAttribute id="CHARG"/>
+        <viewAttribute id="MATKL"/>
+        <viewAttribute id="PSTYV"/>
+        <viewAttribute id="POSAR"/>
+        <viewAttribute id="PRODH"/>
+        <viewAttribute id="VSTEL"/>
+        <viewAttribute id="ATPKZ"/>
+        <viewAttribute id="SPART"/>
+        <viewAttribute id="POSPA"/>
+        <viewAttribute id="WERKS"/>
+        <viewAttribute id="ALAND"/>
+        <viewAttribute id="WKREG"/>
+        <viewAttribute id="WKCOU"/>
+        <viewAttribute id="WKCTY"/>
+        <viewAttribute id="TAXM1"/>
+        <viewAttribute id="TAXM2"/>
+        <viewAttribute id="TAXM3"/>
+        <viewAttribute id="TAXM4"/>
+        <viewAttribute id="TAXM5"/>
+        <viewAttribute id="TAXM6"/>
+        <viewAttribute id="TAXM7"/>
+        <viewAttribute id="TAXM8"/>
+        <viewAttribute id="TAXM9"/>
+        <viewAttribute id="KOWRR"/>
+        <viewAttribute id="SKTOF"/>
+        <viewAttribute id="SKFBP"/>
+        <viewAttribute id="KONDM"/>
+        <viewAttribute id="KTGRM"/>
+        <viewAttribute id="KOSTL"/>
+        <viewAttribute id="BONUS"/>
+        <viewAttribute id="PROVG"/>
+        <viewAttribute id="VKGRP"/>
+        <viewAttribute id="VKBUR"/>
+        <viewAttribute id="SPARA"/>
+        <viewAttribute id="SHKZG"/>
+        <viewAttribute id="ERNAM"/>
+        <viewAttribute id="ERDAT"/>
+        <viewAttribute id="ERZET"/>
+        <viewAttribute id="BWTAR"/>
+        <viewAttribute id="LGORT"/>
+        <viewAttribute id="WAVWR"/>
+        <viewAttribute id="KZWI1"/>
+        <viewAttribute id="KZWI2"/>
+        <viewAttribute id="KZWI3"/>
+        <viewAttribute id="KZWI4"/>
+        <viewAttribute id="KZWI5"/>
+        <viewAttribute id="KZWI6"/>
+        <viewAttribute id="STCUR"/>
+        <viewAttribute id="UVPRS"/>
+        <viewAttribute id="UVALL"/>
+        <viewAttribute id="EAN11"/>
+        <viewAttribute id="PRCTR"/>
+        <viewAttribute id="KVGR1"/>
+        <viewAttribute id="KVGR2"/>
+        <viewAttribute id="KVGR3"/>
+        <viewAttribute id="KVGR4"/>
+        <viewAttribute id="KVGR5"/>
+        <viewAttribute id="MVGR1"/>
+        <viewAttribute id="MVGR2"/>
+        <viewAttribute id="MVGR3"/>
+        <viewAttribute id="MVGR4"/>
+        <viewAttribute id="MVGR5"/>
+        <viewAttribute id="MATWA"/>
+        <viewAttribute id="BONBA"/>
+        <viewAttribute id="KOKRS"/>
+        <viewAttribute id="PAOBJNR"/>
+        <viewAttribute id="PS_PSP_PNR"/>
+        <viewAttribute id="AUFNR"/>
+        <viewAttribute id="TXJCD"/>
+        <viewAttribute id="CMPRE"/>
+        <viewAttribute id="CMPNT"/>
+        <viewAttribute id="CUOBJ"/>
+        <viewAttribute id="CUOBJ_CH"/>
+        <viewAttribute id="KOUPD"/>
+        <viewAttribute id="UECHA"/>
+        <viewAttribute id="XCHAR"/>
+        <viewAttribute id="SERNR"/>
+        <viewAttribute id="BZIRK_AUFT"/>
+        <viewAttribute id="KDGRP_AUFT"/>
+        <viewAttribute id="KONDA_AUFT"/>
+        <viewAttribute id="LLAND_AUFT"/>
+        <viewAttribute id="PLTYP_AUFT"/>
+        <viewAttribute id="REGIO_AUFT"/>
+        <viewAttribute id="VKORG_AUFT"/>
+        <viewAttribute id="VTWEG_AUFT"/>
+        <viewAttribute id="ABRBG"/>
+        <viewAttribute id="PROSA"/>
+        <viewAttribute id="UEPVW"/>
+        <viewAttribute id="AUTYP"/>
+        <viewAttribute id="STADAT"/>
+        <viewAttribute id="FPLNR"/>
+        <viewAttribute id="FPLTR"/>
+        <viewAttribute id="AKTNR"/>
+        <viewAttribute id="KNUMA_PI"/>
+        <viewAttribute id="KNUMA_AG"/>
+        <viewAttribute id="PREFE"/>
+        <viewAttribute id="MWSBP"/>
+        <viewAttribute id="AUGRU_AUFT"/>
+        <viewAttribute id="FAREG"/>
+        <viewAttribute id="UPMAT"/>
+        <viewAttribute id="UKONM"/>
+        <viewAttribute id="CMPRE_FLT"/>
+        <viewAttribute id="ABFOR"/>
+        <viewAttribute id="ABGES"/>
+        <viewAttribute id="WKTNR"/>
+        <viewAttribute id="WKTPS"/>
+        <viewAttribute id="BRTWR"/>
+        <viewAttribute id="RPLNR"/>
+        <viewAttribute id="KURSK_DAT"/>
+        <viewAttribute id="WGRU1"/>
+        <viewAttribute id="WGRU2"/>
+        <viewAttribute id="KDKG1"/>
+        <viewAttribute id="KDKG2"/>
+        <viewAttribute id="KDKG3"/>
+        <viewAttribute id="KDKG4"/>
+        <viewAttribute id="KDKG5"/>
+        <viewAttribute id="VKAUS"/>
+        <viewAttribute id="KZFME"/>
+        <viewAttribute id="MWSKZ"/>
+        <viewAttribute id="VERTT"/>
+        <viewAttribute id="VERTN"/>
+        <viewAttribute id="SGTXT"/>
+        <viewAttribute id="DELCO"/>
+        <viewAttribute id="BEMOT"/>
+        <viewAttribute id="RRREL"/>
+        <viewAttribute id="AKKUR"/>
+        <viewAttribute id="WMINR"/>
+        <viewAttribute id="VGBEL_EX"/>
+        <viewAttribute id="VGPOS_EX"/>
+        <viewAttribute id="LOGSYS"/>
+        <viewAttribute id="VGTYP_EX"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#VBRP">
+        <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VBELN" source="VBELN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UEPOS" source="UEPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKIMG" source="FKIMG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VRKME" source="VRKME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UMVKZ" source="UMVKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UMVKN" source="UMVKN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SMENG" source="SMENG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FKLMG" source="FKLMG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LMENG" source="LMENG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VOLUM" source="VOLUM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VOLEH" source="VOLEH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="GSBER" source="GSBER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRSDT" source="PRSDT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FBUDA" source="FBUDA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KURSK" source="KURSK"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="NETWR" source="NETWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VBELV" source="VBELV"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POSNV" source="POSNV"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VGBEL" source="VGBEL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VGPOS" source="VGPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VGTYP" source="VGTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AUBEL" source="AUBEL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AUPOS" source="AUPOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AUREF" source="AUREF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ARKTX" source="ARKTX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PMATN" source="PMATN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CHARG" source="CHARG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PSTYV" source="PSTYV"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POSAR" source="POSAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRODH" source="PRODH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VSTEL" source="VSTEL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ATPKZ" source="ATPKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPART" source="SPART"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="POSPA" source="POSPA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ALAND" source="ALAND"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WKREG" source="WKREG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WKCOU" source="WKCOU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WKCTY" source="WKCTY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXM1" source="TAXM1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXM2" source="TAXM2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXM3" source="TAXM3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXM4" source="TAXM4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXM5" source="TAXM5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXM6" source="TAXM6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXM7" source="TAXM7"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXM8" source="TAXM8"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAXM9" source="TAXM9"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KOWRR" source="KOWRR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SKTOF" source="SKTOF"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SKFBP" source="SKFBP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KONDM" source="KONDM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KTGRM" source="KTGRM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KOSTL" source="KOSTL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BONUS" source="BONUS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PROVG" source="PROVG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VKGRP" source="VKGRP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VKBUR" source="VKBUR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SPARA" source="SPARA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SHKZG" source="SHKZG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERNAM" source="ERNAM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ERZET" source="ERZET"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BWTAR" source="BWTAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LGORT" source="LGORT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WAVWR" source="WAVWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZWI1" source="KZWI1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZWI2" source="KZWI2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZWI3" source="KZWI3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZWI4" source="KZWI4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZWI5" source="KZWI5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZWI6" source="KZWI6"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STCUR" source="STCUR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVPRS" source="UVPRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UVALL" source="UVALL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="EAN11" source="EAN11"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KVGR1" source="KVGR1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KVGR2" source="KVGR2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KVGR3" source="KVGR3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KVGR4" source="KVGR4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KVGR5" source="KVGR5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MVGR1" source="MVGR1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MVGR2" source="MVGR2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MVGR3" source="MVGR3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MVGR4" source="MVGR4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MVGR5" source="MVGR5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATWA" source="MATWA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BONBA" source="BONBA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KOKRS" source="KOKRS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PAOBJNR" source="PAOBJNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PS_PSP_PNR" source="PS_PSP_PNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AUFNR" source="AUFNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TXJCD" source="TXJCD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPRE" source="CMPRE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPNT" source="CMPNT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUOBJ" source="CUOBJ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUOBJ_CH" source="CUOBJ_CH"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KOUPD" source="KOUPD"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UECHA" source="UECHA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="XCHAR" source="XCHAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SERNR" source="SERNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BZIRK_AUFT" source="BZIRK_AUFT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KDGRP_AUFT" source="KDGRP_AUFT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KONDA_AUFT" source="KONDA_AUFT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LLAND_AUFT" source="LLAND_AUFT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PLTYP_AUFT" source="PLTYP_AUFT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="REGIO_AUFT" source="REGIO_AUFT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VKORG_AUFT" source="VKORG_AUFT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG_AUFT" source="VTWEG_AUFT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ABRBG" source="ABRBG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PROSA" source="PROSA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UEPVW" source="UEPVW"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AUTYP" source="AUTYP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="STADAT" source="STADAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FPLNR" source="FPLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FPLTR" source="FPLTR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AKTNR" source="AKTNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KNUMA_PI" source="KNUMA_PI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KNUMA_AG" source="KNUMA_AG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PREFE" source="PREFE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MWSBP" source="MWSBP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AUGRU_AUFT" source="AUGRU_AUFT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="FAREG" source="FAREG"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UPMAT" source="UPMAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="UKONM" source="UKONM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CMPRE_FLT" source="CMPRE_FLT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ABFOR" source="ABFOR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ABGES" source="ABGES"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WKTNR" source="WKTNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WKTPS" source="WKTPS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BRTWR" source="BRTWR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RPLNR" source="RPLNR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KURSK_DAT" source="KURSK_DAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WGRU1" source="WGRU1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WGRU2" source="WGRU2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KDKG1" source="KDKG1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KDKG2" source="KDKG2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KDKG3" source="KDKG3"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KDKG4" source="KDKG4"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KDKG5" source="KDKG5"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VKAUS" source="VKAUS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="KZFME" source="KZFME"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MWSKZ" source="MWSKZ"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VERTT" source="VERTT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VERTN" source="VERTN"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SGTXT" source="SGTXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DELCO" source="DELCO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="BEMOT" source="BEMOT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="RRREL" source="RRREL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AKKUR" source="AKKUR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="WMINR" source="WMINR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VGBEL_EX" source="VGBEL_EX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VGPOS_EX" source="VGPOS_EX"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LOGSYS" source="LOGSYS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VGTYP_EX" source="VGTYP_EX"/>
+      </input>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Projection_1">
+    <attributes>
+      <attribute id="SAPClient">
+        <descriptions defaultDescription="SAP Client"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MANDT"/>
+      </attribute>
+      <attribute id="BillingDocument">
+        <descriptions defaultDescription="Billing Document"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VBELN"/>
+      </attribute>
+      <attribute id="BillingDocumentItem">
+        <descriptions defaultDescription="Billing Document Item"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="POSNR"/>
+      </attribute>
+      <attribute id="HigherLevelItem">
+        <descriptions defaultDescription="Higher Level Item"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UEPOS"/>
+      </attribute>
+      <attribute id="BillingQuantityUnit">
+        <descriptions defaultDescription="Billing Quantity Unit"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VRKME"/>
+      </attribute>
+      <attribute id="BillingToBaseQuantityNumrtr">
+        <descriptions defaultDescription="Billing To Base Quantity Numrtr"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UMVKZ"/>
+      </attribute>
+      <attribute id="BillingToBaseQuantityDnmntr">
+        <descriptions defaultDescription="Billing To Base Quantity Dnmntr"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UMVKN"/>
+      </attribute>
+      <attribute id="BaseUnit">
+        <descriptions defaultDescription="Base Unit"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MEINS"/>
+      </attribute>
+      <attribute id="ItemWeightUnit">
+        <descriptions defaultDescription="Item Weight Unit"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="GEWEI"/>
+      </attribute>
+      <attribute id="ItemVolumeUnit">
+        <descriptions defaultDescription="Item Volume Unit"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VOLEH"/>
+      </attribute>
+      <attribute id="BusinessArea">
+        <descriptions defaultDescription="Business Area"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="GSBER"/>
+      </attribute>
+      <attribute id="PricingDate">
+        <descriptions defaultDescription="Pricing Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="PRSDT"/>
+      </attribute>
+      <attribute id="ServicesRenderedDate">
+        <descriptions defaultDescription="Services Rendered Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FBUDA"/>
+      </attribute>
+      <attribute id="PriceDetnExchangeRate">
+        <descriptions defaultDescription="Price Detn Exchange Rate"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KURSK"/>
+      </attribute>
+      <attribute id="OriginSDDocument">
+        <descriptions defaultDescription="Origin SD Document"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VBELV"/>
+      </attribute>
+      <attribute id="OriginSDDocumentItem">
+        <descriptions defaultDescription="Origin SD Document Item"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="POSNV"/>
+      </attribute>
+      <attribute id="ReferenceSDDocument">
+        <descriptions defaultDescription="Reference SD Document"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VGBEL"/>
+      </attribute>
+      <attribute id="ReferenceSDDocumentItem">
+        <descriptions defaultDescription="Reference SD Document Item"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VGPOS"/>
+      </attribute>
+      <attribute id="ReferenceSDDocumentCategory">
+        <descriptions defaultDescription="Reference SD Document Category"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VGTYP"/>
+      </attribute>
+      <attribute id="SalesDocument">
+        <descriptions defaultDescription="Sales Document"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="AUBEL"/>
+      </attribute>
+      <attribute id="SalesDocumentItem">
+        <descriptions defaultDescription="Sales Document Item"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="AUPOS"/>
+      </attribute>
+      <attribute id="Material">
+        <descriptions defaultDescription="Material"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MATNR"/>
+      </attribute>
+      <attribute id="BillingDocumentItemText">
+        <descriptions defaultDescription="Billing Document Item Text"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="ARKTX"/>
+      </attribute>
+      <attribute id="PricingReferenceMaterial">
+        <descriptions defaultDescription="Pricing Reference Material"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="PMATN"/>
+      </attribute>
+      <attribute id="Batch">
+        <descriptions defaultDescription="Batch"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CHARG"/>
+      </attribute>
+      <attribute id="MaterialGroup">
+        <descriptions defaultDescription="Material Group"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MATKL"/>
+      </attribute>
+      <attribute id="SalesDocumentItemCategory">
+        <descriptions defaultDescription="Sales Document Item Category"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="PSTYV"/>
+      </attribute>
+      <attribute id="SalesDocumentItemType">
+        <descriptions defaultDescription="Sales Document Item Type"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="POSAR"/>
+      </attribute>
+      <attribute id="ProductHierarchyNode">
+        <descriptions defaultDescription="Product Hierarchy Node"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="PRODH"/>
+      </attribute>
+      <attribute id="ShippingPoint">
+        <descriptions defaultDescription="Shipping Point"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VSTEL"/>
+      </attribute>
+      <attribute id="Division">
+        <descriptions defaultDescription="Division"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="SPART"/>
+      </attribute>
+      <attribute id="Plant">
+        <descriptions defaultDescription="Plant"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="WERKS"/>
+      </attribute>
+      <attribute id="CostCenter">
+        <descriptions defaultDescription="Cost Center"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KOSTL"/>
+      </attribute>
+      <attribute id="VolumeRebateGroup">
+        <descriptions defaultDescription="Volume Rebate Group"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="BONUS"/>
+      </attribute>
+      <attribute id="MaterialCommissionGroup">
+        <descriptions defaultDescription="Material Commission Group"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="PROVG"/>
+      </attribute>
+      <attribute id="SalesGroup">
+        <descriptions defaultDescription="Sales Group"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VKGRP"/>
+      </attribute>
+      <attribute id="SalesOffice">
+        <descriptions defaultDescription="Sales Office"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="VKBUR"/>
+      </attribute>
+      <attribute id="OrganizationDivision">
+        <descriptions defaultDescription="Organization Division"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="SPARA"/>
+      </attribute>
+      <attribute id="ReturnItemProcessingType">
+        <descriptions defaultDescription="Return Item Processing Type"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="SHKZG"/>
+      </attribute>
+      <attribute id="CreatedByUser">
+        <descriptions defaultDescription="Created By User"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="ERNAM"/>
+      </attribute>
+      <attribute id="CreationDate">
+        <descriptions defaultDescription="Creation Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="ERDAT"/>
+      </attribute>
+      <attribute id="CreationTime">
+        <descriptions defaultDescription="Creation Time"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="ERZET"/>
+      </attribute>
+      <attribute id="StorageLocation">
+        <descriptions defaultDescription="Storage Location"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="LGORT"/>
+      </attribute>
+      <attribute id="StatisticsExchangeRate">
+        <descriptions defaultDescription="Statistics Exchange Rate"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="STCUR"/>
+      </attribute>
+      <attribute id="PricingInfoIsIncompleted">
+        <descriptions defaultDescription="Pricing Info Is Incompleted"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVPRS"/>
+      </attribute>
+      <attribute id="GeneralInfoIsIncompleted">
+        <descriptions defaultDescription="General Info Is Incompleted"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="UVALL"/>
+      </attribute>
+      <attribute id="InternationalArticleNumber">
+        <descriptions defaultDescription="International Article Number"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="EAN11"/>
+      </attribute>
+      <attribute id="ProfitCenter">
+        <descriptions defaultDescription="Profit Center"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="PRCTR"/>
+      </attribute>
+      <attribute id="AdditionalCustomerGroup1">
+        <descriptions defaultDescription="Additional Customer Group 1"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KVGR1"/>
+      </attribute>
+      <attribute id="AdditionalCustomerGroup2">
+        <descriptions defaultDescription="Additional Customer Group 2"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KVGR2"/>
+      </attribute>
+      <attribute id="AdditionalCustomerGroup3">
+        <descriptions defaultDescription="Additional Customer Group 3"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KVGR3"/>
+      </attribute>
+      <attribute id="AdditionalCustomerGroup4">
+        <descriptions defaultDescription="Additional Customer Group 4"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KVGR4"/>
+      </attribute>
+      <attribute id="AdditionalCustomerGroup5">
+        <descriptions defaultDescription="Additional Customer Group 5"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KVGR5"/>
+      </attribute>
+      <attribute id="AdditionalMaterialGroup1">
+        <descriptions defaultDescription="Additional Material Group 1"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MVGR1"/>
+      </attribute>
+      <attribute id="AdditionalMaterialGroup2">
+        <descriptions defaultDescription="Additional Material Group 2"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MVGR2"/>
+      </attribute>
+      <attribute id="AdditionalMaterialGroup3">
+        <descriptions defaultDescription="Additional Material Group 3"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MVGR3"/>
+      </attribute>
+      <attribute id="AdditionalMaterialGroup4">
+        <descriptions defaultDescription="Additional Material Group 4"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MVGR4"/>
+      </attribute>
+      <attribute id="AdditionalMaterialGroup5">
+        <descriptions defaultDescription="Additional Material Group 5"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MVGR5"/>
+      </attribute>
+      <attribute id="OriginallyRequestedMaterial">
+        <descriptions defaultDescription="Originally Requested Material"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="MATWA"/>
+      </attribute>
+      <attribute id="ControllingArea">
+        <descriptions defaultDescription="Controlling Area"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KOKRS"/>
+      </attribute>
+      <attribute id="ProfitabilitySegment">
+        <descriptions defaultDescription="Profitability Segment"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="PAOBJNR"/>
+      </attribute>
+      <attribute id="WBSElement">
+        <descriptions defaultDescription="WBS Element"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="PS_PSP_PNR"/>
+      </attribute>
+      <attribute id="Order">
+        <descriptions defaultDescription="Order"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="AUFNR"/>
+      </attribute>
+      <attribute id="CreditRelatedPrice">
+        <descriptions defaultDescription="Credit Related Price"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPRE"/>
+      </attribute>
+      <attribute id="ItemIsRelevantForCredit">
+        <descriptions defaultDescription="Item Is Relevant For Credit"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CMPNT"/>
+      </attribute>
+      <attribute id="ProductConfiguration">
+        <descriptions defaultDescription="Product Configuration"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="CUOBJ"/>
+      </attribute>
+      <attribute id="SDDocumentCategory">
+        <descriptions defaultDescription="SD Document Category"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="AUTYP"/>
+      </attribute>
+      <attribute id="StatisticsDate">
+        <descriptions defaultDescription="Statistics Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="STADAT"/>
+      </attribute>
+      <attribute id="BillingPlan">
+        <descriptions defaultDescription="Billing Plan"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FPLNR"/>
+      </attribute>
+      <attribute id="BillingPlanItem">
+        <descriptions defaultDescription="Billing Plan Item"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FPLTR"/>
+      </attribute>
+      <attribute id="RetailPromotion">
+        <descriptions defaultDescription="Retail Promotion"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="AKTNR"/>
+      </attribute>
+      <attribute id="SalesPromotion">
+        <descriptions defaultDescription="Sales Promotion"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KNUMA_PI"/>
+      </attribute>
+      <attribute id="SalesDeal">
+        <descriptions defaultDescription="Sales Deal"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KNUMA_AG"/>
+      </attribute>
+      <attribute id="SDDocumentReason">
+        <descriptions defaultDescription="SD Document Reason"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="AUGRU_AUFT"/>
+      </attribute>
+      <attribute id="BillingPlanRule">
+        <descriptions defaultDescription="Billing Plan Rule"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="FAREG"/>
+      </attribute>
+      <attribute id="ExchangeRateDate">
+        <descriptions defaultDescription="Exchange Rate Date"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="KURSK_DAT"/>
+      </attribute>
+      <attribute id="LogicalSystem">
+        <descriptions defaultDescription="Logical System"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="LOGSYS"/>
+      </attribute>
+      <attribute id="BillToPartyRegion">
+        <descriptions defaultDescription="Bill To Party Region"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="REGIO_AUFT"/>
+      </attribute>
+      <attribute id="BillToPartyCountry">
+        <descriptions defaultDescription="Bill To Party Country"/>
+        <searchProperties/>
+        <keyMapping columnObjectName="Projection_1" columnName="LLAND_AUFT"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="RebateBasisAmount" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Rebate Basis Amount"/>
+        <measureMapping columnObjectName="Projection_1" columnName="BONBA"/>
+      </measure>
+      <measure id="ItemGrossWeight" aggregationType="sum" measureType="quantity">
+        <descriptions defaultDescription="Item Gross Weight"/>
+        <unitCurrencyAttribute attributeName="ItemWeightUnit"/>
+        <measureMapping columnObjectName="Projection_1" columnName="BRGEW"/>
+      </measure>
+      <measure id="ItemGrossAmountOfBillingDoc" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Item Gross Amount Of Billing Doc"/>
+        <measureMapping columnObjectName="Projection_1" columnName="BRTWR"/>
+      </measure>
+      <measure id="BillingQuantity" aggregationType="sum" measureType="quantity">
+        <descriptions defaultDescription="Billing Quantity"/>
+        <unitCurrencyAttribute attributeName="BillingQuantityUnit"/>
+        <measureMapping columnObjectName="Projection_1" columnName="FKIMG"/>
+      </measure>
+      <measure id="BillingQuantityInBaseUnit" aggregationType="sum" measureType="quantity">
+        <descriptions defaultDescription="Billing Quantity In Base Unit"/>
+        <unitCurrencyAttribute attributeName="BaseUnit"/>
+        <measureMapping columnObjectName="Projection_1" columnName="FKLMG"/>
+      </measure>
+      <measure id="Subtotal1Amount" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Subtotal 1 Amount"/>
+        <measureMapping columnObjectName="Projection_1" columnName="KZWI1"/>
+      </measure>
+      <measure id="Subtotal2Amount" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Subtotal 2 Amount"/>
+        <measureMapping columnObjectName="Projection_1" columnName="KZWI2"/>
+      </measure>
+      <measure id="Subtotal3Amount" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Subtotal 3 Amount"/>
+        <measureMapping columnObjectName="Projection_1" columnName="KZWI3"/>
+      </measure>
+      <measure id="Subtotal4Amount" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Subtotal 4 Amount"/>
+        <measureMapping columnObjectName="Projection_1" columnName="KZWI4"/>
+      </measure>
+      <measure id="Subtotal5Amount" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Subtotal 5 Amount"/>
+        <measureMapping columnObjectName="Projection_1" columnName="KZWI5"/>
+      </measure>
+      <measure id="Subtotal6Amount" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Subtotal 6 Amount"/>
+        <measureMapping columnObjectName="Projection_1" columnName="KZWI6"/>
+      </measure>
+      <measure id="MRPRequiredQuantityInBaseUnit" aggregationType="sum" measureType="quantity">
+        <descriptions defaultDescription="MRP Required Quantity In Base Unit"/>
+        <unitCurrencyAttribute attributeName="BaseUnit"/>
+        <measureMapping columnObjectName="Projection_1" columnName="LMENG"/>
+      </measure>
+      <measure id="TaxAmount" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Tax Amount"/>
+        <measureMapping columnObjectName="Projection_1" columnName="MWSBP"/>
+      </measure>
+      <measure id="ItemNetAmountOfBillingDoc" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Item Net Amount Of Billing Doc"/>
+        <measureMapping columnObjectName="Projection_1" columnName="NETWR"/>
+      </measure>
+      <measure id="ItemNetWeight" aggregationType="sum" measureType="quantity">
+        <descriptions defaultDescription="Item Net Weight"/>
+        <unitCurrencyAttribute attributeName="ItemWeightUnit"/>
+        <measureMapping columnObjectName="Projection_1" columnName="NTGEW"/>
+      </measure>
+      <measure id="EligibleAmountForCashDiscount" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Eligible Amount For Cash Discount"/>
+        <measureMapping columnObjectName="Projection_1" columnName="SKFBP"/>
+      </measure>
+      <measure id="CostAmount" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="Cost Amount"/>
+        <measureMapping columnObjectName="Projection_1" columnName="WAVWR"/>
+      </measure>
+      <measure id="PricingScaleQuantityInBaseUnit" aggregationType="sum" measureType="quantity">
+        <descriptions defaultDescription="Pricing Scale Quantity In Base Unit"/>
+        <unitCurrencyAttribute attributeName="BaseUnit"/>
+        <measureMapping columnObjectName="Projection_1" columnName="SMENG"/>
+      </measure>
+      <measure id="ItemVolume" aggregationType="sum" measureType="quantity">
+        <descriptions defaultDescription="Item Volume"/>
+        <unitCurrencyAttribute attributeName="ItemVolumeUnit"/>
+        <measureMapping columnObjectName="Projection_1" columnName="VOLUM"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="22" y="87"/>
+      </shape>
+      <shape modelObjectName="VBRP" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="70" y="174"/>
+      </shape>
+      <shape modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="166"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>
